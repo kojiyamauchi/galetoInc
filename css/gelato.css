@@ -1,0 +1,2508 @@
+@charset "UTF-8";
+/* Google Web Font. */
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,900|Ubuntu:400,500|Noto+Sans|Cabin);
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,100italic,400italic);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+/*==================================================================
+
+
+
+
+
+Reset & Default Setting CSS. for All Pages.
+===================================================================*/
+a,
+address,
+article,
+aside,
+audio,
+blockquote,
+body,
+canvas,
+caption,
+code,
+dd,
+div,
+dl,
+dt,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+iframe,
+img,
+input,
+label,
+li,
+mark,
+menu,
+nav,
+ol,
+output,
+p,
+pre,
+ruby,
+section,
+span,
+summary,
+table,
+tbody,
+td,
+textarea,
+th,
+time,
+tr,
+ul,
+video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  /*base font 16px*/
+  font-size: 100%;
+  /*iOS font automatic adjustment none.*/
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  color: #444;
+  background: url("../images/background.png") repeat 0 0;
+  background-size: 100px;
+  font-family: "Raleway",'Noto Sans Japanese',"Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: block;
+  clear: both;
+  content: " ";
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+  background: transparent;
+}
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #444;
+}
+
+a:hover {
+  color: inherit;
+  /*親要素の継承*/
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+img {
+  vertical-align: middle;
+}
+
+li,
+ol,
+ul {
+  list-style-type: none;
+}
+
+table {
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+textarea {
+  resize: vertical;
+}
+
+* {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: rgba(8, 178, 224, 0.2);
+}
+
+::selection {
+  background: rgba(8, 178, 224, 0.2);
+}
+
+::-moz-selection {
+  background: rgba(8, 178, 224, 0.2);
+}
+
+.displayPC {
+  display: block !important;
+}
+
+.displaySP {
+  display: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Safari Hack */
+  * {
+    /* Add Property */
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  /* Chrome Hack */
+  * {
+    /* Add Property */
+  }
+}
+@-moz-document url-prefix() {
+  /* FireFox Hack */
+  * {
+    /* Add Property */
+  }
+}
+@media all and (-ms-high-contrast: none) {
+  /* IE Hack */
+  * {
+    /* Add Property */
+  }
+}
+/*==================================================================
+
+
+
+
+
+  Common Parts CSS.
+===================================================================*/
+/* Loading CSS. */
+#loadingWrap {
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  height: 100%;
+  background: url("../images/background.png") repeat 0 0;
+}
+#loadingWrap #loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 6.5%;
+  margin: auto;
+  opacity: 0;
+}
+#loadingWrap #loading img#loadingIceCreamLogo {
+  width: 100%;
+}
+#loadingWrap #loading img#loadingIceCreamLogoExclamation {
+  position: absolute;
+  right: -1%;
+  bottom: -1%;
+  width: 8.5%;
+}
+#loadingWrap #loading img#loadingIceCreamLogoExclamation.exclamationAnimation {
+  -webkit-animation: rotate 0.175s;
+  animation: rotate 0.175s;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+/* Fixed Navigation. */
+nav#fixedNavi {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  display: none;
+  width: 100%;
+  min-width: 1000px;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+nav#fixedNavi ul#naviWrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 66.666667%;
+  min-width: 960px;
+  margin: 0 auto;
+}
+nav#fixedNavi ul#naviWrap li {
+  width: 11.01190476190471%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  text-align: center;
+}
+nav#fixedNavi ul#naviWrap li.fixedNaviCurrent {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+nav#fixedNavi ul#naviWrap li:first-of-type {
+  width: 22.916666666667%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+nav#fixedNavi ul#naviWrap li:first-of-type:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+nav#fixedNavi ul#naviWrap li:first-of-type img {
+  width: 90.909090909091%;
+  margin: 3.636363636364% 0;
+}
+nav#fixedNavi ul#naviWrap li a {
+  letter-spacing: 0.02em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+nav#fixedNavi ul#naviWrap li a .underLine {
+  display: block;
+  width: 55%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+nav#fixedNavi ul#naviWrap li a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+nav#fixedNavi ul#naviWrap li:nth-of-type(4) a .underLine {
+  width: 65%;
+}
+nav#fixedNavi ul#naviWrap li:nth-of-type(7) a .underLine {
+  width: 100%;
+}
+nav#fixedNavi ul#naviWrap li#linkGallery {
+  position: relative;
+}
+nav#fixedNavi ul#naviWrap li#linkGallery span#instagramIcon {
+  position: absolute;
+  z-index: 99999;
+  left: 50%;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 0 0 0 -18px;
+  white-space: nowrap;
+  text-indent: -5.5em;
+  opacity: 0;
+  background-image: url("../images/iconInstagram.svg");
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 0 #fff;
+  font-size: 0.8125em;
+  font-weight: bold;
+  line-height: 100px;
+}
+
+/* Global Navigation CSS. */
+nav#globalNavi {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  width: 100%;
+  min-width: 1000px;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+nav#globalNavi ul#naviWrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 66.666667%;
+  min-width: 960px;
+  margin: 0 auto;
+}
+nav#globalNavi ul#naviWrap li {
+  width: 11.01190476190471%;
+  text-align: center;
+}
+nav#globalNavi ul#naviWrap li.current a {
+  color: #08b2e0;
+}
+nav#globalNavi ul#naviWrap li:first-of-type {
+  width: 22.916666666667%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+nav#globalNavi ul#naviWrap li:first-of-type:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+nav#globalNavi ul#naviWrap li:first-of-type img {
+  width: 90.909090909091%;
+  margin: 3.636363636364% 0;
+}
+nav#globalNavi ul#naviWrap li a {
+  letter-spacing: 0.02em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+nav#globalNavi ul#naviWrap li a .underLine {
+  display: block;
+  width: 55%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+nav#globalNavi ul#naviWrap li a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+nav#globalNavi ul#naviWrap li:nth-of-type(4) a .underLine {
+  width: 65%;
+}
+nav#globalNavi ul#naviWrap li:nth-of-type(7) a .underLine {
+  width: 100%;
+}
+nav#globalNavi ul#naviWrap li#linkGallery {
+  position: relative;
+}
+nav#globalNavi ul#naviWrap li#linkGallery span#instagramIcon {
+  position: absolute;
+  z-index: 99999;
+  left: 50%;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 0 0 0 -18px;
+  white-space: nowrap;
+  text-indent: -5.5em;
+  opacity: 0;
+  background-image: url("../images/iconInstagram.svg");
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 0 #fff;
+  font-size: 0.8125em;
+  font-weight: bold;
+  line-height: 100px;
+}
+
+/*==================================================================
+
+
+
+
+
+  Intro CSS.
+===================================================================*/
+.introduction #intro {
+  position: relative;
+  z-index: 99;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.introduction #intro #introLogoImagesBox {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 11%;
+  margin: auto;
+  background-color: #fff;
+}
+.introduction #intro #introLogoImagesBox #rainbowAnimationWrap {
+  position: absolute;
+  z-index: 101;
+  width: 100%;
+}
+.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock {
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
+  height: 14.28571428571429%;
+}
+.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock:first-of-type {
+  top: 1%;
+  height: 13.28571428571429%;
+}
+.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock:last-of-type {
+  height: 13.28571428571429%;
+}
+.introduction #intro #introLogoImagesBox img#introLogoMask {
+  position: absolute;
+  z-index: 102;
+  width: 100%;
+}
+.introduction #intro #introLogoImagesBox img#introIceCream {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.introduction #intro #introLogoImagesBox img#introIceCreamExclamation {
+  position: absolute;
+  right: 10%;
+  bottom: -1%;
+  width: 10%;
+}
+.introduction #intro #introLogoImagesBox img#introIceCreamExclamation.exclamationAnimation {
+  -webkit-animation: rotate 0.175s;
+  animation: rotate 0.175s;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+.introduction #intro .fadeAnimation {
+  opacity: 0;
+}
+.introduction #intro #colorRed {
+  background-color: RGBa(237, 26, 61, 1);
+}
+.introduction #intro #colorOrange {
+  top: 14.28571428571429%;
+  background-color: RGBa(243, 152, 0, 1);
+}
+.introduction #intro #colorYellow {
+  top: 28.57142857142858%;
+  background-color: RGBa(255, 212, 0, 1);
+}
+.introduction #intro #colorGreen {
+  top: 42.85714285714287%;
+  background-color: RGBa(0, 128, 0, 1);
+}
+.introduction #intro #colorLightBlue {
+  top: 57.14285714285716%;
+  background-color: RGBa(175, 223, 228, 1);
+}
+.introduction #intro #colorBlue {
+  top: 71.42857142857145%;
+  background-color: RGBa(0, 103, 191, 1);
+}
+.introduction #intro #colorPurple {
+  top: 85.71428571428574%;
+  background-color: RGBa(167, 87, 168, 1);
+}
+.introduction #intro #introLogoFontOpacity {
+  opacity: 0;
+}
+.introduction #topPage #introAnimationLinkMask {
+  display: block;
+}
+.introduction #topPage #borderTop {
+  width: 0;
+}
+.introduction #topPage #homeContents header #gelatoFont img {
+  opacity: 0;
+}
+.introduction #topPage #homeContents header #homeSubTitle span {
+  opacity: 0;
+}
+.introduction #topPage #homeContents header nav.intro ul li {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.introduction #topPage #homeContents header nav.intro ul li.rotate {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.introduction #topPage #homeContents header nav.intro ul li a {
+  /*/
+  opacity: 0;
+  */
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageBox {
+  left: 50px;
+  opacity: 0;
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox {
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox.scaleAnimation {
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img {
+  display: none;
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img#topPageHomeContentsIceCreamLogoExclamation.exclamationAnimation {
+  -webkit-animation: rotate 0.175s;
+  animation: rotate 0.175s;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsCopyRight {
+  opacity: 0;
+}
+.introduction #topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox #slideImageBoxCopyRight {
+  display: none;
+}
+.introduction #topPage #homeContents button.scrollButton {
+  opacity: 0;
+}
+@-webkit-keyframes move1 {}
+.introduction #aboutPage button.scrollButton,
+.introduction #companyPage button.scrollButton,
+.introduction #workPage button.scrollButton {
+  opacity: 0;
+}
+.introduction #aboutPage #aboutPageMainContents {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 1;
+}
+.introduction #aboutPage #aboutPageMainContents.aboutIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
+}
+.introduction #aboutPage #aboutPageBackGroundImageLeft {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #aboutPage #aboutPageBackGroundImageLeft.aboutIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(-10%, 0) !important;
+  -ms-transform: translate(-10%, 0) !important;
+  transform: translate(-10%, 0) !important;
+  opacity: 0;
+}
+.introduction #aboutPage #aboutPageBackGroundImageCenter {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #aboutPage #aboutPageBackGroundImageCenter.aboutIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 10%) !important;
+  -ms-transform: translate(0, 10%) !important;
+  transform: translate(0, 10%) !important;
+  opacity: 0;
+}
+.introduction #aboutPage #aboutPageBackGroundImageRight {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #aboutPage #aboutPageBackGroundImageRight.aboutIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(10%, 0) !important;
+  -ms-transform: translate(10%, 0) !important;
+  transform: translate(10%, 0) !important;
+  opacity: 0;
+}
+.introduction #worksPage #worksPageMainContentsWrap {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 1;
+}
+.introduction #worksPage #worksPageMainContentsWrap.worksIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
+}
+.introduction #worksPage #worskPageTopImageBox {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #worksPage #worskPageTopImageBox.worksIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(-10%, 0) !important;
+  -ms-transform: translate(-10%, 0) !important;
+  transform: translate(-10%, 0) !important;
+  opacity: 0;
+}
+.introduction #worksPage #worksPageBottomImageBox {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #worksPage #worksPageBottomImageBox.worksIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(10%, 0) !important;
+  -ms-transform: translate(10%, 0) !important;
+  transform: translate(10%, 0) !important;
+  opacity: 0;
+}
+.introduction #companyPage #companyPageMainContents table {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #companyPage #companyPageMainContents table.companyIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(-10%, 0) !important;
+  -ms-transform: translate(-10%, 0) !important;
+  transform: translate(-10%, 0) !important;
+  opacity: 0;
+}
+.introduction #companyPage #companyPageImageAndMapBox {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  opacity: 1;
+}
+.introduction #companyPage #companyPageImageAndMapBox.companyIntro {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(10%, 0) !important;
+  -ms-transform: translate(10%, 0) !important;
+  transform: translate(10%, 0) !important;
+  opacity: 0;
+}
+
+/*==================================================================
+
+
+
+
+
+  Slide Show CSS.
+===================================================================*/
+.slideShow #topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap {
+  display: none;
+}
+.slideShow #topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox {
+  display: block;
+}
+
+/*==================================================================
+
+
+
+
+
+  Top Page Second Access Intro CSS.
+===================================================================*/
+body.secondAccess #topPage h2#homeSubTitle {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+body.secondAccess #topPage h2#homeSubTitle.secondAccess {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+body.secondAccess #topPage nav ul li {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+body.secondAccess #topPage nav ul li.secondAccess {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+/*==================================================================
+
+
+
+
+
+  Top Page CSS.
+===================================================================*/
+#intro {
+  display: none;
+}
+
+#topPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#topPage #introAnimationLinkMask {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#topPage #borderTop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#topPage #homeContents {
+  width: 100%;
+  height: 100%;
+}
+#topPage #homeContents header {
+  position: relative;
+  margin: 2.5% auto 1.5%;
+}
+#topPage #homeContents header #gelatoFont {
+  position: relative;
+  z-index: 2;
+  width: 29.166666666667%;
+  margin: 0 auto 1.5%;
+}
+#topPage #homeContents header #gelatoFont h1#topHeading1 {
+  position: absolute;
+  text-indent: -10000px;
+}
+#topPage #homeContents header #gelatoFont img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+#topPage #homeContents header #gelatoFont #gelatoLogoFontBlackOutLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#topPage #homeContents header #homeSubTitle {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto 1.5%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.3125rem;
+}
+#topPage #homeContents header #homeSubTitle span {
+  position: relative;
+  opacity: 1;
+}
+#topPage #homeContents header #homeSubTitle span#ls {
+  letter-spacing: -0.04em;
+}
+#topPage #homeContents header #homeSubTitle img {
+  width: 100%;
+}
+#topPage #homeContents header nav {
+  position: relative;
+  z-index: 3;
+}
+#topPage #homeContents header nav ul {
+  display: table;
+}
+#topPage #homeContents header nav ul:nth-of-type(1) {
+  width: 39.583333333333%;
+  margin: 0 auto 1.041666666667%;
+}
+#topPage #homeContents header nav ul:nth-of-type(2) {
+  width: 34.375%;
+  margin: 0 auto 1.041666666667%;
+}
+#topPage #homeContents header nav ul li {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  /*transform: scale(1);
+  transition: all 0.5s;*/
+}
+#topPage #homeContents header nav ul li a {
+  letter-spacing: 0.04em;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  /*
+  opacity: 1;
+  */
+}
+#topPage #homeContents header nav ul li a .underLine {
+  display: block;
+  width: 55%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#topPage #homeContents header nav ul li:hover {
+  /*transform: scale(1.2);
+  transition: all 0.5s;*/
+}
+#topPage #homeContents header nav ul li:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#topPage #homeContents header nav ul li#linkGallery {
+  position: relative;
+}
+#topPage #homeContents header nav ul li#linkGallery span#instagramIcon {
+  position: absolute;
+  z-index: 99999;
+  left: 50%;
+  display: inline-block;
+  display: none;
+  width: 36px;
+  height: 36px;
+  margin: 0 0 0 -18px;
+  white-space: nowrap;
+  text-indent: -5.5em;
+  opacity: 0;
+  background-image: url("../images/iconInstagram.svg");
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 0 #fff;
+  font-size: 0.8125em;
+  font-weight: bold;
+  line-height: 92px;
+}
+#topPage #homeContents header img#headerBackGroundBlue {
+  position: absolute;
+  z-index: 1;
+  top: -49px;
+  left: -1440px;
+  width: 100%;
+  opacity: 0.4;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap {
+  position: relative;
+  width: 100%;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap {
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  width: 100%;
+  margin: -0.277777777778% auto 0;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageBox {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 100%;
+  margin-left: -5%;
+  opacity: 1;
+  background-image: url("../images/homeContentsMainImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox {
+  position: absolute;
+  z-index: 11;
+  right: 0;
+  bottom: 20.872865275142%;
+  left: 0;
+  width: 6.5%;
+  min-width: 93px;
+  margin: auto;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img {
+  display: block;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img#topPageHomeContentsIceCreamLogo {
+  width: 100%;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img#topPageHomeContentsIceCreamLogoExclamation {
+  position: absolute;
+  right: -1%;
+  bottom: -1%;
+  width: 8.5%;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsMainImageIceCreamLogoBox img#topPageHomeContentsIceCreamLogoExclamation.exclamationAnimation {
+  -webkit-animation: rotate 0.175s;
+  animation: rotate 0.175s;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsCopyRight {
+  position: absolute;
+  z-index: 11;
+  bottom: 15.5%;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 1;
+  color: #000;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #topHomeContentsMainImageWrap #topHomeContentsCopyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  width: 99%;
+  margin: 0 auto;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox #slideImageBoxCopyRight {
+  position: absolute;
+  z-index: 11;
+  bottom: 2%;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox #slideImageBoxCopyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox .vegas-timer {
+  display: none;
+  height: 5px;
+}
+#topPage #homeContents #mainImageAndSlideImagesWrap #slideImageBox .vegas-timer .vegas-timer-progress {
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#topPage #homeContents button.scrollButton {
+  position: absolute;
+  z-index: 11;
+  bottom: 4%;
+  left: 50%;
+  margin-left: -34px;
+  -webkit-animation-name: move1;
+  animation-name: move1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+}
+@keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+    transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes move1 {
+  0% {
+    -webkit-transform: translate3d(0, 0%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 7.5%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0%, 0);
+  }
+}
+#topPage #homeContents button.scrollButton.active.focus, #topPage #homeContents button.scrollButton.active:focus, #topPage #homeContents button.scrollButton.focus, #topPage #homeContents button.scrollButton:active.focus, #topPage #homeContents button.scrollButton:active:focus, #topPage #homeContents button.scrollButton:focus {
+  outline: none;
+}
+#topPage #homeContents button.scrollButton span.fa-forward {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/*==================================================================
+
+
+
+
+
+  About Page CSS.
+===================================================================*/
+#aboutPage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 250px 0 0;
+}
+#aboutPage #aboutPageBackGround {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#aboutPage #aboutPageBackGround #aboutPageBackGroundImageLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/aboutPageBackGroundImageLeft.png");
+  background-position: center;
+  background-size: cover;
+}
+#aboutPage #aboutPageBackGround #aboutPageBackGroundImageCenter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/aboutPageBackGroundImageCenter.png");
+  background-position: center;
+  background-size: cover;
+}
+#aboutPage #aboutPageBackGround #aboutPageBackGroundImageRight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/aboutPageBackGroundImageRight.png");
+  background-position: center;
+  background-size: cover;
+}
+#aboutPage #aboutPageMainContents {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 66.666667%;
+  margin: auto;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+  background: rgba(255, 255, 255, 0.65);
+}
+#aboutPage #aboutPageMainContents h2 {
+  position: relative;
+  left: 50%;
+  display: inline-block;
+  margin: 2% 0 0;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  color: #585858;
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+}
+#aboutPage #aboutPageMainContents h2 span {
+  letter-spacing: -0.025em;
+  opacity: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#aboutPage #aboutPageMainContents p {
+  padding: 1% 5% 4%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 2.6em;
+}
+#aboutPage #aboutPageMainContents p span {
+  font-weight: 600;
+}
+#aboutPage button.scrollButton {
+  position: absolute;
+  z-index: 11;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -34px;
+  -webkit-animation-name: move1;
+  animation-name: move1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+  font-weight: bold;
+}
+@keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+    transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+#aboutPage button.scrollButton.active.focus, #aboutPage button.scrollButton.active:focus, #aboutPage button.scrollButton.focus, #aboutPage button.scrollButton:active.focus, #aboutPage button.scrollButton:active:focus, #aboutPage button.scrollButton:focus {
+  outline: none;
+}
+#aboutPage button.scrollButton span.fa-forward {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/*==================================================================
+
+
+
+
+
+  Works Page CSS.
+===================================================================*/
+#worksPage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 250px 0 0;
+}
+#worksPage #worksPageTopImageWrap {
+  width: 100%;
+  height: 28%;
+}
+#worksPage #worksPageTopImageWrap #worskPageTopImageBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/worksPageTopImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#worksPage #worksPageMainContentsWrap {
+  width: 100%;
+  height: 44%;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents {
+  position: relative;
+  width: 66.666667%;
+  height: 100%;
+  margin: 0 auto;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox {
+  float: left;
+  width: 25%;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox h3 {
+  margin: 20% 0 6.143344709898%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-size: 1em;
+  font-weight: bold;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox p {
+  letter-spacing: 0.02em;
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.75em;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox p span {
+  font-weight: 600;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox:nth-of-type(1) {
+  margin: 0 0 0 5.5%;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox:nth-of-type(2) {
+  margin: 0 7%;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents .contentsBox:nth-of-type(3) {
+  margin: 0 5.5% 0 0;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents h2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#worksPage #worksPageMainContentsWrap #worksPageMainContents h2 span {
+  letter-spacing: -0.04em;
+  opacity: 0;
+  color: #585858;
+  font-family: 'Lato', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#worksPage #worksPageBottomImageWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 28%;
+}
+#worksPage #worksPageBottomImageWrap #worksPageBottomImageBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/worksPageBottomImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#worksPage button.scrollButton {
+  position: absolute;
+  z-index: 11;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -34px;
+  -webkit-animation-name: move1;
+  animation-name: move1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+}
+@keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+    transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+#worksPage button.scrollButton.active.focus, #worksPage button.scrollButton.active:focus, #worksPage button.scrollButton.focus, #worksPage button.scrollButton:active.focus, #worksPage button.scrollButton:active:focus, #worksPage button.scrollButton:focus {
+  outline: none;
+}
+#worksPage button.scrollButton span.fa-forward {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/*==================================================================
+
+
+
+
+
+  Company Page CSS.
+===================================================================*/
+#companyPage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 250px 0 0;
+}
+#companyPage #companyPageMainContents {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+#companyPage #companyPageMainContents table {
+  width: 74.444444444444%;
+  margin: 15% auto 0;
+}
+#companyPage #companyPageMainContents table th {
+  width: 18.283582089552%;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  font-family: "Noto Sans Japanese";
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.42857142857143em;
+}
+#companyPage #companyPageMainContents table td {
+  width: 81.716417910448%;
+  padding: 0 0 3%;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  font-family: "Noto Sans Japanese";
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.42857142857143em;
+}
+#companyPage #companyPageMainContents table td a {
+  float: left;
+  font-weight: 500;
+}
+#companyPage #companyPageMainContents table td a .underLine {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#companyPage #companyPageMainContents table td a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#companyPage #companyPageMainContents h2 {
+  display: inline-block;
+  float: right;
+  margin: 3% 12.777777777778% 0 0;
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+}
+#companyPage #companyPageMainContents h2 span {
+  letter-spacing: -0.025em;
+  opacity: 0;
+  color: #585858;
+  font-family: 'Lato', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#companyPage #companyPageImageAndMapBox {
+  position: relative;
+  float: right;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+}
+#companyPage #companyPageImageAndMapBox #comapnyPageImageBox {
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/companyPageImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#companyPage #companyPageImageAndMapBox #googleMap {
+  position: absolute;
+  z-index: 100;
+  top: 25%;
+  left: 20%;
+  width: 100%;
+  height: 50%;
+  opacity: 0;
+}
+#companyPage #companyPageImageAndMapBox p#goToGoogleMap {
+  position: relative;
+  z-index: 100;
+  top: 76%;
+  left: 20%;
+  text-align: center;
+  opacity: 0;
+}
+#companyPage #companyPageImageAndMapBox p#goToGoogleMap a {
+  letter-spacing: 0.02em;
+  opacity: 0.65;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+#companyPage #companyPageImageAndMapBox p#goToGoogleMap a span.fa {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  font-size: 1.25em;
+}
+#companyPage #companyPageImageAndMapBox p#goToGoogleMap a .underLine {
+  display: block;
+  width: 27.5%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#companyPage #companyPageImageAndMapBox p#goToGoogleMap a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#companyPage a#openMap {
+  position: absolute;
+  z-index: 103;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+  padding: 25px 0 0;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  text-align: center;
+  letter-spacing: 0.02em;
+  opacity: 1;
+  color: #fff;
+  border-radius: 90px;
+  background-color: rgba(8, 178, 224, 0.5);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 0.83333333333333em;
+}
+#companyPage a#openMap:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+}
+#companyPage button.scrollButton {
+  position: absolute;
+  z-index: 104;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -51px;
+  -webkit-animation-name: move1;
+  animation-name: move1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  font-weight: bold;
+}
+@keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+    transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes move1 {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(7.5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+#companyPage button.scrollButton.active.focus, #companyPage button.scrollButton.active:focus, #companyPage button.scrollButton.focus, #companyPage button.scrollButton:active.focus, #companyPage button.scrollButton:active:focus, #companyPage button.scrollButton:focus {
+  outline: none;
+}
+#companyPage button.scrollButton span.fa-forward {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Page CSS.
+===================================================================*/
+#contactPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#contactPage #mainImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  background-image: url("../images/contactPageImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#contactPage #mainImage h1 {
+  position: absolute;
+  bottom: 6%;
+  left: 10%;
+  display: inline-block;
+  opacity: 0.8;
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+}
+#contactPage #mainImage h1 span {
+  letter-spacing: -0.025em;
+  opacity: 1;
+  color: #585858;
+  font-family: 'Lato', sans-serif;
+  font-size: 3.75rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#contactPage #contactContents {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  letter-spacing: 0.05em;
+}
+#contactPage #contactContents h2 {
+  width: 75%;
+  margin: 12% auto 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+#contactPage #contactContents h2 span#slash {
+  color: rgba(8, 178, 224, 0.52157);
+  font-weight: bold;
+}
+#contactPage #contactContents p {
+  width: 75%;
+  margin: 2.5% auto 0;
+  font-size: 0.75em;
+  line-height: 1.25;
+}
+#contactPage #contactContents p span.fa {
+  opacity: 0.6;
+  color: #ff0000;
+}
+#contactPage #contactContents form {
+  width: 75%;
+  margin: 2.5% auto;
+}
+#contactPage #contactContents form table {
+  width: 100%;
+}
+#contactPage #contactContents form table tr th {
+  width: 35%;
+  vertical-align: middle;
+  font-size: 0.8125em;
+}
+#contactPage #contactContents form table tr th span.fa {
+  margin: 0 0 0 3px;
+  opacity: 0.6;
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr:last-of-type th {
+  padding: 20px 0 0;
+  vertical-align: top;
+}
+#contactPage #contactContents form table tr td {
+  width: 65%;
+  font-family: "Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+#contactPage #contactContents form table tr td input[type=text] {
+  display: block;
+  width: 100%;
+  max-width: 351px;
+  margin: 10px auto;
+  padding: 10px 15px;
+  border: solid 2px rgba(158, 158, 158, 0.52157);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8125em;
+}
+@media all and (-ms-high-contrast: none) {
+  #contactPage #contactContents form table tr td input[type=text] {
+    /* IE Hack */
+    border: solid 2px #9e9e9e;
+  }
+}
+#contactPage #contactContents form table tr td input[type=text]:-ms-input-placeholder {
+  opacity: 0.52157;
+}
+#contactPage #contactContents form table tr td input[type=text].validateError {
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form table tr td input[type=text].validateError:placeholder-shown {
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td input[type=text].validateError::-webkit-input-placeholder {
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td input[type=text].validateError:-moz-placeholder {
+  opacity: 1;
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td input[type=text].validateError::-moz-placeholder {
+  opacity: 1;
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td input[type=text].validateError:-ms-input-placeholder {
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td textarea {
+  display: block;
+  width: 100%;
+  max-width: 351px;
+  height: 100px;
+  margin: 10px auto 35px;
+  padding: 10px 15px;
+  border: solid 2px rgba(158, 158, 158, 0.52157);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8125em;
+}
+#contactPage #contactContents form table tr td textarea.validateError {
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form table tr td textarea.validateError:placeholder-shown {
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td textarea.validateError::-webkit-input-placeholder {
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td textarea.validateError:-moz-placeholder {
+  opacity: 1;
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td textarea.validateError::-moz-placeholder {
+  opacity: 1;
+  color: #ff0000;
+}
+#contactPage #contactContents form table tr td textarea.validateError:-ms-input-placeholder {
+  color: #ff0000;
+}
+#contactPage #contactContents form #buttonBox {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+#contactPage #contactContents form #buttonBox button.contactSubmit {
+  width: 40%;
+  color: #fff;
+  border: solid 3px rgba(8, 178, 224, 0.52157);
+  border-radius: 5px;
+  background-color: rgba(8, 178, 224, 0.52157);
+  font-size: 0.8125em;
+  font-weight: bold;
+}
+#contactPage p#copyRight {
+  position: fixed;
+  bottom: 0.25%;
+  width: 100%;
+  min-width: 1000px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#contactPage p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+body.contactIntro {
+  display: none;
+}
+body.contactIntro #contactPage #globalNavi {
+  display: none;
+}
+body.contactIntro #contactPage #mainImage {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(-10%, 0);
+  -ms-transform: translate(-10%, 0);
+  transform: translate(-10%, 0);
+  opacity: 0;
+}
+body.contactIntro #contactPage #mainImage.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+body.contactIntro #contactPage #mainImage h1 {
+  border-bottom: solid 5px rgba(8, 178, 224, 0);
+}
+body.contactIntro #contactPage #mainImage h1 span {
+  opacity: 0;
+}
+body.contactIntro #contactPage #contactContents {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(10%, 0);
+  -ms-transform: translate(10%, 0);
+  transform: translate(10%, 0);
+  opacity: 0;
+}
+body.contactIntro #contactPage #contactContents.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Confirm Page CSS.
+===================================================================*/
+#contactConfirmBorderTop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+
+#formWrap {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+#formWrap h3 {
+  margin: 0 0 2%;
+  padding: 10% 0 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+#formWrap p {
+  margin: 0 0 5%;
+  font-size: 0.875em;
+  line-height: 1.25;
+}
+#formWrap form {
+  width: 60%;
+  margin: 0 auto;
+}
+#formWrap form table {
+  width: 100%;
+  margin: 0 0 8%;
+}
+#formWrap form table tr th {
+  padding: 3% 0;
+  vertical-align: middle;
+  font-size: 1em;
+}
+#formWrap form table tr td {
+  padding: 3% 0;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 1em;
+}
+#formWrap form table tr:last-of-type th {
+  vertical-align: top;
+}
+#formWrap form .btn {
+  width: 35%;
+  margin: 0 6%;
+  color: #fff;
+  border: solid 3px rgba(8, 178, 224, 0.52157);
+  border-radius: 5px;
+  background-color: rgba(8, 178, 224, 0.52157);
+  font-size: 1em;
+  font-weight: bold;
+}
+#formWrap + p#copyRight {
+  position: fixed;
+  bottom: 0.25%;
+  width: 100%;
+  min-width: 1000px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  color: #000;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#formWrap + p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Complete Page CSS.
+===================================================================*/
+#contactCompleteBorderTop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+
+#contactComplete {
+  width: 100%;
+  height: 100%;
+}
+#contactComplete #contactCompleteBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  text-align: center;
+}
+#contactComplete #contactCompleteBox img {
+  width: 15%;
+  margin: 0 0 2%;
+}
+#contactComplete #contactCompleteBox p {
+  margin: 0 0 5%;
+  text-align: center;
+  font-size: 0.875em;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+#contactComplete #contactCompleteBox a {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+#contactComplete #contactCompleteBox a .underLine {
+  display: block;
+  width: 20%;
+  height: 3px;
+  margin: 3px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#contactComplete #contactCompleteBox a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#contactComplete + p#copyRight {
+  position: fixed;
+  bottom: 0.25%;
+  width: 100%;
+  min-width: 1000px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  color: #000;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#contactComplete + p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+/*==================================================================
+
+
+
+
+
+  Recruit Page CSS.
+===================================================================*/
+#recruitPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#recruitPage #mainImage {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  background-image: url("../images/recruitPageImage.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#recruitPage #mainImage h1 {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  display: inline-block;
+  opacity: 0.8;
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+}
+#recruitPage #mainImage span {
+  letter-spacing: -0.025em;
+  opacity: 1;
+  color: #252525;
+  text-shadow: 3px 3px 2px #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 5.25rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#recruitPage #recruitContents {
+  display: table;
+  width: 100%;
+  height: 30%;
+  letter-spacing: 0.05em;
+}
+#recruitPage #recruitContents p {
+  display: table-cell;
+  -webkit-transform: translate(0, -5%);
+  -ms-transform: translate(0, -5%);
+  transform: translate(0, -5%);
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2em;
+}
+#recruitPage p#copyRight {
+  position: fixed;
+  bottom: 0.25%;
+  width: 100%;
+  min-width: 1000px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#recruitPage p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+body.recruitIntro {
+  display: none;
+}
+body.recruitIntro #recruitPage #globalNavi {
+  display: none;
+}
+body.recruitIntro #recruitPage #mainImage {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(-10%, 0);
+  -ms-transform: translate(-10%, 0);
+  transform: translate(-10%, 0);
+  opacity: 0;
+}
+body.recruitIntro #recruitPage #mainImage.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+body.recruitIntro #recruitPage #mainImage h1 {
+  border-bottom: solid 5px rgba(8, 178, 224, 0);
+}
+body.recruitIntro #recruitPage #mainImage h1 span {
+  opacity: 0;
+}
+body.recruitIntro #recruitPage #recruitContents {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(10%, 0);
+  -ms-transform: translate(10%, 0);
+  transform: translate(10%, 0);
+  opacity: 0;
+}
+body.recruitIntro #recruitPage #recruitContents.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+body.recruitIntro #recruitPage #recruitContents p {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 10%);
+  -ms-transform: translate(0, 10%);
+  transform: translate(0, 10%);
+  opacity: 0;
+}
+body.recruitIntro #recruitPage #recruitContents p.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, -5%);
+  -ms-transform: translate(0, -5%);
+  transform: translate(0, -5%);
+  opacity: 1;
+}
+
+/*==================================================================
+
+
+
+
+
+  Under Construction Page CSS.
+===================================================================*/
+#underConstructionNow {
+  width: 100%;
+  height: 100%;
+}
+#underConstructionNow #underConstructionNowBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 40%;
+  margin: auto;
+  text-align: center;
+}
+#underConstructionNow #underConstructionNowBox img {
+  width: 15%;
+  margin: 0 0 2%;
+}
+#underConstructionNow #underConstructionNowBox h1 {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+#underConstructionNow #underConstructionNowBox h1 #copyright {
+  font-size: 1rem;
+  font-weight: bold;
+}
+#underConstructionNow #underConstructionNowBox h1 #copyright #year {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+#underConstructionNow #underConstructionNowBox h1 a {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+#underConstructionNow #underConstructionNowBox h1 a .underLine {
+  display: block;
+  width: 20%;
+  height: 3px;
+  margin: -3px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#underConstructionNow #underConstructionNowBox h1 a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/*==================================================================
+
+
+
+
+
+  Responsive Media Queries
+===================================================================*/
+@media screen and (min-width: 2061px) {
+  /* iMac 27inch. */
+  html {
+    font-size: 150%;
+  }
+}
+@media screen and (min-width: 1445px) and (max-width: 2060px) {
+  /* iMac 21.5inch. */
+  html {
+    font-size: 120%;
+  }
+}
+/*
+@media screen and (min-width: 1285px) and (max-width:1444px)  { Large PC.
+}
+@media screen and (min-width: 992px) and (max-width:1284px) { Medium PC.
+}
+@media screen and (max-width: 991px) { Tablet.
+}
+*/
+@media screen and (max-width: 768px) {
+  /* Smart Phone. */
+  .displayPC {
+    display: none !important;
+  }
+
+  .displaySP {
+    display: block !important;
+  }
+}
+/*
+@media screen and (max-width:480px) { Small Smart Phone2.
+html {
+font-size: addBaseFontSize ;
+}
+}
+@media screen and (max-width:385px) { Small Smart Phone1.
+html (
+font-size: addBaseFontSize ;
+)
+}
+
+  Mac PC Default Window Width.
+-iMac 27inch & iMac 27inch Retina Display-
+width: 2560;
+
+-iMac 21.5inch-
+width: 2048;
+
+-MacBook Pro 15inch Retina Display-
+width: 1440;
+
+-MacBook Pro 13inch Retina Display-
+width: 1440;
+
+-MacBook Air 13inch-
+width: 1440;
+
+-MacBook Air 11inch-
+width: 1366;
+
+-MacBook 12inch Retina Display-
+width: 1280;
+*/

@@ -1,0 +1,1393 @@
+@charset "UTF-8";
+@import "compass";
+/* Google Web Font */
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,900|Ubuntu:400,500|Noto+Sans|Cabin);
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,100italic,400italic);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+/*==================================================================
+
+
+
+
+
+Reset & Default Setting CSS. for All Pages.
+===================================================================*/
+a,
+address,
+article,
+aside,
+audio,
+blockquote,
+body,
+canvas,
+caption,
+code,
+dd,
+div,
+dl,
+dt,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+iframe,
+img,
+input,
+label,
+li,
+mark,
+menu,
+nav,
+ol,
+output,
+p,
+pre,
+ruby,
+section,
+span,
+summary,
+table,
+tbody,
+td,
+textarea,
+th,
+time,
+tr,
+ul,
+video {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    width: 100%;
+    height: 100%;
+    /*base font 16px*/
+    font-size: 100%;
+    /*iOS font automatic adjustment none.*/
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: "Raleway",'Noto Sans Japanese',"Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    line-height: 1;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+.clear {
+    clear: both;
+}
+.clearfix:after,
+.clearfix:before {
+    display: block;
+    clear: both;
+    content: " ";
+}
+a {
+    text-decoration: none;
+    color: #444;
+    background: transparent;
+}
+a:active,
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: inherit;
+    /*親要素の継承*/
+    @include opacity(1);
+}
+a.current {}
+img {
+    vertical-align: middle;
+}
+li,
+ol,
+ul {
+    list-style-type: none;
+}
+table {
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+textarea {
+    resize: vertical;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+::selection {
+    background: rgba(8, 178, 224, 0.2);
+}
+::-moz-selection {
+    background: rgba(8, 178, 224, 0.2);
+}
+.displayPC {
+    display: block !important;
+}
+.displaySP {
+    display: none !important;
+}
+.displayPR {
+    display: block !important;
+}
+.displayLS {
+    display: none !important;
+}
+@media all and (orientation: landscape) {
+    .displayPR {
+        display: none !important;
+    }
+    .displayLS {
+        display: block !important;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Safari Hack */
+    * {
+        /* Add Property */
+    }
+}
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    /* Chrome Hack */
+    * {
+        /* Add Property */
+    }
+}
+@-moz-document url-prefix() {
+    /* FireFox Hack */
+    * {
+        /* Add Property */
+    }
+}
+@media all and (-ms-high-contrast:none) {
+    /* IE Hack */
+    * {
+        /* Add Property */
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Common Parts.
+===================================================================*/
+/* Header & Heading1 CSS. Except For Top Page. */
+body {
+    &:not(#topPage) {
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 10% 0;
+            background: -moz-linear-gradient(top,rgba(0,0,0,0.9),rgba(0,0,0,0));
+            background: -o-linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0));
+            background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0.9)),to(rgba(0,0,0,0)));
+            background: linear-gradient(top,rgba(0,0,0,0.9),rgba(0,0,0,0));
+            @media all and (orientation: landscape) {
+                padding: 5% 0 2.5%;
+            }
+            a {
+                position: absolute;
+                top: 5%;
+                color: #fff;
+                font-size: 1em;
+                &.prev {
+                    left: 2.5%;
+                    white-space: nowrap;
+                    &:before {
+                        margin: 0 7.5% 0 0;
+                        content: "\f0a8";
+                        font-family: "FontAwesome";
+                    }
+                }
+                &.next {
+                    right: 2.5%;
+                    white-space: nowrap;
+                    &:after {
+                        margin: 0 0 0 7.5%;
+                        content: "\f0a9";
+                        font-family: "FontAwesome";
+                    }
+                }
+            }
+            h1 {
+                -webkit-transition: all 0.25s;
+                -moz-transition: all 0.25s;
+                -ms-transition: all 0.25s;
+                transition: all 0.25s;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+                text-align: center;
+                letter-spacing: 0;
+                font-family: "Times New Roman", Symbol;
+                font-size: 3rem;
+                font-weight: 100;
+                &.fontSmall {
+                    -webkit-transition: all 0.25s;
+                    -moz-transition: all 0.25s;
+                    -ms-transition: all 0.25s;
+                    transition: all 0.25s;
+                    -webkit-transform: scale(0.8);
+                    -moz-transform: scale(0.8);
+                    -ms-transform: scale(0.8);
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+            }
+        }
+        p {
+            letter-spacing: 0.06em;
+            text-shadow: 1px 1px 1px #000;
+            font-size: 1em;
+            line-height: 1.75em;
+        }
+    }
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    /* Menu Button */
+    #menuBtn {
+        width: 80%;
+        margin: 0 auto 7%;
+        color: #fff;
+        border: solid 2px #fff;
+        background-color: transparent;
+        font-size: 1em;
+        @media all and (orientation: landscape) {
+            margin: 0 0 3%;
+        }
+    }
+    /* Copy Right */
+    p {
+        &#copyRight {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 0 2%;
+            text-align: center !important;
+            letter-spacing: 0.04em !important;
+            text-shadow: none !important;
+            font-size: 0.75em !important;
+            font-weight: bold;
+            line-height: 1 !important;
+            span {
+                font-family: "Helvetica Neue", sans-serif;
+                font-weight: bold;
+            }
+        }
+    }
+    #menuHamburger {
+        position: fixed;
+        right: 0;
+        bottom: 5px;
+        display: inline-block;
+        color: #fff;
+        border: solid 2px rgba(255, 255, 255, 0);
+        background-color: transparent;
+        font-size: 1.5em;
+    }
+    #pageTop {
+        position: fixed;
+        bottom: 5px;
+        left: 0;
+        display: inline-block;
+        display: none;
+        padding: 3px 6px;
+        color: #fff;
+        border: solid 2px rgba(255, 255, 255, 0);
+        background-color: transparent;
+        font-size: 1.25em;
+        line-height: 0.75em;
+        span {
+            &#text {
+                font-size: 0.75rem;
+                font-weight: bold;
+                line-height: 0;
+            }
+        }
+    }
+    #borderBottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        background: rgba(103, 206, 234, 0.6);
+    }
+}
+/* Global Navigation */
+nav {
+    position: fixed;
+    z-index: 999999;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.85);
+    ul {
+        width: 100%;
+        height: 100%;
+        li {
+            width: 100%;
+            height: 11.11111111111111%;
+            border-bottom: solid 1px rgba(255,255,255,0.4);
+            &:last-of-type {
+                border-bottom: none;
+            }
+            a {
+                display: -webkit-flex;
+                display: flex;
+                height: 100%;
+                color: #fff;
+                font-size: 1em;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                &.current {
+                    font-size: 1.25em;
+                    font-weight: bold;
+                    &:before {
+                        content: url("../images/currentLogo.svg");
+                        width: 30px;
+                        margin: 0 4px 0 -32px;
+                        /*content: "\f178";
+                        text-indent: -1.5em;
+                        font-family: "FontAwesome";*/
+                        @media all and (orientation: landscape) {
+                            width: 20px;
+                            margin: 0 4px 0 -22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*  SP URL Bar & Menu Bar Not Hide CSS. */
+#scrollWrap {
+    height: 91vh;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    @media screen and (min-width: 768px) {
+        /* Tablet Portrait. */
+        height: 100vh;
+    }
+    @media all and (orientation: landscape) {
+        height: 100vh;
+    }
+}
+#contactPage {
+    #scrollWrap {
+        -webkit-overflow-scrolling: auto;
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Each Page Back Ground Images.
+===================================================================*/
+body {
+    &:not(#topPage) {
+        &::before {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    &#topPage {
+        #topImageBox {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            &.forAndroid {
+                background-image: url('../images/topPageBackgroundIMG.jpg');
+            }
+        }
+    }
+    &#aboutPage {
+        &::before {
+            background-image: url('../images/aboutPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#worksPage {
+        &::before {
+            background-image: url('../images/worksPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#companyPage {
+        &::before {
+            background-image: url('../images/companyPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#recruitPage {
+        &::before {
+            background-image: url('../images/recruitPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#privacyPolicyPage {
+        &::before {
+            background-image: url('../images/privacyPolicyPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#contactPage {
+        &::before {
+            background-image: url('../images/contactPageBackgroundIMG.jpg');
+            -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+        }
+    }
+    &#completePage,
+    &#confirmPage,
+    &#underConstructionNowPage {
+        &::before {
+            background: url("../images/background.png") repeat 0 0;
+            background-size: 100px;
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Top Page Introduction CSS.
+===================================================================*/
+body {
+    &#topPage {
+        &.introduction {
+            #intro {
+                position: fixed;
+                z-index: 99;
+                display: block;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                #introLogoImagesBox {
+                    position: absolute;
+                    z-index: 100;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 35%;
+                    margin: auto;
+                    background-color: #fff;
+                    @media all and (orientation: landscape) {
+                        width: 20%;
+                    }
+                    #rainbowAnimationWrap {
+                        position: absolute;
+                        z-index: 101;
+                        width: 100%;
+                        .rainbowBlock {
+                            position: absolute;
+                            left: 2.5%;
+                            width: 95%;
+                            height: 14.28571428571429%;
+                            &:first-of-type {
+                                top: 1%;
+                                height: 13.28571428571429%;
+                            }
+                            &:last-of-type {
+                                height: 13.28571428571429%;
+                            }
+                        }
+                    }
+                    img#introLogoMask {
+                        position: absolute;
+                        z-index: 102;
+                        width: 100%;
+                    }
+                    img#introIceCream {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                    }
+                    img#introIceCreamExclamation {
+                        position: absolute;
+                        right: 10%;
+                        bottom: -1%;
+                        width: 10%;
+                        &.exclamationAnimation {
+                            -webkit-animation: rotate 0.175s;
+                            animation: rotate 0.175s;
+                            -webkit-animation-iteration-count: 5;
+                            animation-iteration-count: 5;
+                        }
+                        @keyframes rotate {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            30% {
+                                transform: rotate(-20deg);
+                            }
+                            60% {
+                                transform: rotate(20deg);
+                            }
+                            100% {
+                                transform: rotate(0deg);
+                            }
+                        }
+                        @-webkit-keyframes rotate {
+                            0% {
+                                -webkit-transform: rotate(0deg);
+                            }
+                            30% {
+                                -webkit-transform: rotate(-20deg);
+                            }
+                            60% {
+                                -webkit-transform: rotate(20deg);
+                            }
+                            100% {
+                                -webkit-transform: rotate(0deg);
+                            }
+                        }
+                    }
+                }
+                .fadeAnimation {
+                    opacity: 0;
+                }
+                #colorRed {
+                    background-color: RGBa(237, 26, 61, 1);
+                }
+                #colorOrange {
+                    top: 14.28571428571429%;
+                    background-color: RGBa(243, 152, 0, 1);
+                }
+                #colorYellow {
+                    top: 28.57142857142858%;
+                    background-color: RGBa(255, 212, 0, 1);
+                }
+                #colorGreen {
+                    top: 42.85714285714287%;
+                    background-color: RGBa(0, 128, 0, 1);
+                }
+                #colorLightBlue {
+                    top: 57.14285714285716%;
+                    background-color: RGBa(175, 223, 228, 1);
+                }
+                #colorBlue {
+                    top: 71.42857142857145%;
+                    background-color: RGBa(0, 103, 191, 1);
+                }
+                #colorPurple {
+                    top: 85.71428571428574%;
+                    background-color: RGBa(167, 87, 168, 1);
+                }
+                #introLogoFontOpacity {
+                    opacity: 0;
+                }
+            }
+            #fontAnimation {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 95%;
+                margin: auto;
+                img {
+                    &#gelatoLogoFontBlack {
+                        position: absolute;
+                        opacity: 0;
+                        @media all and (orientation: landscape) {
+                            width: 90%;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                        }
+                    }
+                }
+                #gelatoLogoFontBlackOutLine {
+                    @media all and (orientation: landscape) {
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+                }
+                #homeSubTitle {
+                    position: relative;
+                    z-index: 100;
+                    width: 100%;
+                    margin: 3% auto 1.5%;
+                    text-align: center;
+                    letter-spacing: 0.02em;
+                    font-family: 'Cabin', sans-serif;
+                    font-size: 1.3125rem;
+                    span {
+                        position: relative;
+                        opacity: 0;
+                        color: #000;
+                        &#ls {
+                            letter-spacing: -0.04em;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            header {
+                h1 {
+                    opacity: 0;
+                }
+            }
+            h2 {
+                opacity: 0;
+            }
+            button {
+                &#menuBtn {
+                    opacity: 0;
+                }
+            }
+            p {
+                &#copyRight {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Top Page CSS.
+===================================================================*/
+#topPage {
+    #intro {
+        display: none;
+    }
+    header {
+        padding: 10% 0 0;
+        @media all and (orientation: landscape) {
+            padding: 5% 0 0;
+        }
+        h1 {
+            width: 95%;
+            margin: 0 auto;
+            text-indent: -99999px;
+            background-image: url("../images/gelatoLogoFontWhite.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    h2 {
+        margin: 5% auto 0;
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-family: Cabin, sans-serif;
+        font-size: 1.3125rem;
+    }
+    .vegas-timer {
+        height: 5px;
+    }
+    .vegas-timer-progress {
+        background: rgba(103, 206, 234, 0.6);
+    }
+}
+/*==================================================================
+
+
+
+
+
+  About Page CSS.
+===================================================================*/
+#aboutPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #aboutDescription {
+        padding: 36% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 19%;
+        }
+    }
+    @media all and (orientation: landscape) {
+        footer {
+            position: static;
+            bottom: auto;
+        }
+    }
+    @media screen and (min-width: 768px) and (orientation: landscape) {
+        footer {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+/*==================================================================
+  Works Page CSS.
+===================================================================*/
+#worksPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #worksContents {
+        width: 95%;
+        margin: 0 auto;
+        padding: 36% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 19%;
+        }
+        h2 {
+            margin: 0 0 4%;
+            text-align: center;
+            font-size: 1.375em;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+        }
+        p {
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.6em;
+            margin: 0 0 16%;
+            padding: 0 0 2%;
+            border-bottom: solid 1px rgba(255,255,255,0.8);
+        }
+    }
+    footer {
+        position: static;
+        bottom: auto;
+        @media all and (orientation: landscape) {
+            p {
+                &#copyRight {
+                    position: fixed;
+                    bottom: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Company Page CSS.
+===================================================================*/
+#companyPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #companyContents {
+        width: 95%;
+        margin: 0 auto;
+        padding: 36% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 19%;
+        }
+        dl {
+            width: 100%;
+            width: 100%;
+            margin: 0 0 8%;
+            padding: 0 0 1%;
+            border-bottom: solid 1px rgba(255,255,255,0.8);
+            dt {
+                margin: 0 0 2%;
+                text-align: center;
+                font-size: 1.125em;
+            }
+            dd {
+                text-align: center;
+                font-size: 1em;
+                line-height: 1.6em;
+                span {
+                    &.fa {
+                        vertical-align: middle;
+                        font-size: 1.25em;
+                    }
+                }
+                a {
+                    color: #fff;
+                    span {
+                        &.fa {
+                            vertical-align: middle;
+                            font-size: 1.25em;
+                        }
+                    }
+                    &#googleMap {
+                        font-weight: bold;
+                        span {
+                            &.fa {
+                                vertical-align: middle;
+                                font-size: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: static;
+        bottom: auto;
+        @media all and (orientation: landscape) {
+            p {
+                &#copyRight {
+                    position: fixed;
+                    bottom: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Gallery Page CSS.
+===================================================================*/
+/* Go To Instagram.
+/*==================================================================
+
+
+
+
+
+  Recruit Page CSS.
+===================================================================*/
+#recruitPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #recruitDescription {
+        padding: 36% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 19%;
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Privacy Policy Page CSS.
+===================================================================*/
+#privacyPolicyPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #privacyPolicyDescription {
+        padding: 36% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 19%;
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Contact Page CSS.
+===================================================================*/
+#contactPage {
+    header {
+        @media all and (orientation: landscape) {}
+        h1 {}
+    }
+    #contactContents {
+        padding: 33% 8% 8%;
+        @media all and (orientation: landscape) {
+            padding: 15% 4% 4%;
+        }
+        p {
+            padding: 0 0 7.5%;
+            @media all and (orientation: landscape) {
+                width: 80%;
+                margin: 0 auto;
+                padding: 0 0 5%;
+            }
+        }
+        span {
+            &.fa-check {
+                opacity: 0.8;
+                color: #ff0000;
+            }
+        }
+        form {
+            .inputBox {
+                position: relative;
+                margin: 0 0 7.5%;
+                text-align: center;
+                @media all and (orientation: landscape) {
+                    margin: 0 0 3%;
+                }
+                span {
+                    &.fa-check {
+                        position: absolute;
+                        top: 50%;
+                        left: 2%;
+                        -webkit-transform: translate(0, -50%);
+                        -moz-transform: translate(0, -50%);
+                        -ms-transform: translate(0, -50%);
+                        -o-transform: translate(0, -50%);
+                        transform: translate(0, -50%);
+                        @media all and (orientation: landscape) {
+                            left: 5%;
+                        }
+                    }
+                }
+                input {
+                    width: 80%;
+                    padding: 6px 12px;
+                    color: #fff;
+                    border: solid 2px rgba(255,255,255,0);
+                    border-radius: 4px;
+                    background-color: rgba(255,255,255,0.25);
+                    font-size: 1em;
+                    font-weight: 400;
+                    line-height: 1.42857143;
+                    &:placeholder-shown {
+                        color: #fff;
+                    }
+                    /* Google Chrome, Safari, Opera 15+, Android, iOS */
+                    &::-webkit-input-placeholder {
+                        color: #fff;
+                    }
+                    /* Firefox 18- */
+                    &:-moz-placeholder {
+                        opacity: 1;
+                        color: #fff;
+                    }
+                    /* Firefox 19+ */
+                    &::-moz-placeholder {
+                        opacity: 1;
+                        color: #fff;
+                    }
+                    /* IE 10+ */
+                    &:-ms-input-placeholder {
+                        color: #fff;
+                    }
+                    &.validateError {
+                        &:placeholder-shown {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Google Chrome, Safari, Opera 15+, Android, iOS */
+                        &::-webkit-input-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Firefox 18- */
+                        &:-moz-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Firefox 19+ */
+                        &::-moz-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* IE 10+ */
+                        &:-ms-input-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+                textarea {
+                    width: 80%;
+                    padding: 6px 12px;
+                    color: #fff;
+                    border: solid 2px rgba(255,255,255,0);
+                    border-radius: 4px;
+                    background-color: rgba(255,255,255,0.25);
+                    font-size: 1em;
+                    font-weight: 400;
+                    line-height: 1.42857143;
+                    &:placeholder-shown {
+                        color: #fff;
+                    }
+                    /* Google Chrome, Safari, Opera 15+, Android, iOS */
+                    &::-webkit-input-placeholder {
+                        color: #fff;
+                    }
+                    /* Firefox 18- */
+                    &:-moz-placeholder {
+                        opacity: 1;
+                        color: #fff;
+                    }
+                    /* Firefox 19+ */
+                    &::-moz-placeholder {
+                        opacity: 1;
+                        color: #fff;
+                    }
+                    /* IE 10+ */
+                    &:-ms-input-placeholder {
+                        color: #fff;
+                    }
+                    &.validateError {
+                        &:placeholder-shown {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Google Chrome, Safari, Opera 15+, Android, iOS */
+                        &::-webkit-input-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Firefox 18- */
+                        &:-moz-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* Firefox 19+ */
+                        &::-moz-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                        /* IE 10+ */
+                        &:-ms-input-placeholder {
+                            color: #ff0000;
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+            }
+            #buttonBox {
+                text-align: center;
+                button {
+                    &.contactSubmit {
+                        display: inline-block;
+                        width: 80%;
+                        color: #fff;
+                        border: solid 2px #fff;
+                        background-color: transparent;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: static;
+        bottom: auto;
+        /*p {
+            &#copyRight {
+                margin: 0 auto 5%;
+            }
+        }*/
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Contact Confirm Page CSS.
+===================================================================*/
+#confirmPage {
+    #formWrap {
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        h3 {
+            margin: 0 0 3%;
+            padding: 5% 0 0;
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            font-size: 1.5em;
+            @media all and (orientation: landscape) {
+                margin: 0 0 2%;
+                padding: 3% 0 0;
+            }
+        }
+        p {
+            width: 95%;
+            margin: 0 auto 3%;
+            @media all and (orientation: landscape) {
+                text-align: center;
+            }
+        }
+        form {
+            width: 100%;
+            table {
+                width: 95%;
+                margin: 0 auto 3%;
+                tr {
+                    &:nth-of-type(5) {
+                        display: none;
+                    }
+                    th {
+                        width: 40%;
+                        padding: 0 0 2.5%;
+                        color: #fff;
+                        text-shadow: 1px 1px 1px #000;
+                        font-size: 1em;
+                    }
+                    td {
+                        width: 60%;
+                        text-align: center;
+                        color: #fff;
+                        text-shadow: 1px 1px 1px #000;
+                        font-family: "Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+                        font-size: 1em;
+                    }
+                }
+            }
+            #btnBox {
+                text-align: center;
+                .btn {
+                    width: 35%;
+                    margin: 0 6%;
+                    color: #fff;
+                    color: #fff;
+                    border: solid 2px #fff;
+                    background-color: transparent;
+                    box-shadow: 1px 1px 1px #000;
+                    text-shadow: 1px 1px 1px #000;
+                    font-size: 1em;
+                    font-weight: bold;
+                    &.send {
+                        margin: 0 2% 0 0;
+                    }
+                    &.back {
+                        margin: 0 0 0 2%;
+                    }
+                }
+            }
+        }
+        footer {
+            p {
+                &#copyRight {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-shadow: 1px 1px 1px #000 !important;
+                }
+            }
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Contact Complete Page CSS.
+===================================================================*/
+#completePage {
+    #completeWrap {
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        p {
+            width: 95%;
+            margin: 0 auto 5%;
+            padding: 5% 0 0;
+            text-align: center;
+        }
+        #btnBox {
+            text-align: center;
+            .btn {
+                margin: 0;
+                color: #fff;
+                color: #fff;
+                border: solid 2px #fff;
+                background-color: transparent;
+                box-shadow: 1px 1px 1px #000;
+                text-shadow: 1px 1px 1px #000;
+                font-size: 1em;
+                font-weight: bold;
+            }
+        }
+        footer {
+            p {
+                &#copyRight {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 0 0 2%;
+                    text-shadow: 1px 1px 1px #000 !important;
+                }
+            }
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Under Construction Now Page CSS.
+===================================================================*/
+#underConstructionNowPage {
+    #underConstructionNowContents {
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        text-align: center;
+        padding: 30% 0 0;
+        @media all and (orientation: landscape) {
+            padding: 15% 0 0;
+        }
+        h1 {
+            margin: 0 0 3%;
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            font-size: 1.25em;
+            line-height: 1.5;
+        }
+        p {
+            &#copyRight {
+                margin: 0 0 4%;
+            }
+        }
+        a {
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+        }
+    }
+}
+/*==================================================================
+
+
+
+
+
+  Responsive Media Queries
+===================================================================*/
+/*
+  @media screen and (min-width:2061x){ iMac 27inch.
+  }
+  @media screen and (min-width:1445px) and (max-width:2060px) { iMac 21.5inch.
+  }
+  @media screen and (min-width: 1285px) and (max-width:1444px)  { Large PC.
+  }
+  @media screen and (min-width: 992px) and (max-width:1284px) { Medium PC.
+  }
+  @media screen and (max-width: 991px) { Tablet.
+  }
+  */
+@media screen and (max-width: 768px) {
+    /* Smart Phone. */
+    .displayPC {
+        display: none !important;
+    }
+    .displaySP {
+        display: block !important;
+    }
+}
+/*
+@media screen and (max-width:480px) { Small Smart Phone.
+html {
+font-size: addBaseFontSize ;
+}
+}
+*/
+@media screen and (max-width:385px) {
+    /* Extra Small Smart Phone. */
+    html {
+        font-size: 65%;
+    }
+}
+/*
+  Mac PC Default Window Width.
+-iMac 27inch & iMac 27inch Retina Display-
+width: 2560;
+
+-iMac 21.5inch-
+width: 2048;
+
+-MacBook Pro 15inch Retina Display-
+width: 1440;
+
+-MacBook Pro 13inch Retina Display-
+width: 1440;
+
+-MacBook Air 13inch-
+width: 1440;
+
+-MacBook Air 11inch-
+width: 1366;
+
+-MacBook 12inch Retina Display-
+width: 1280;
+*/

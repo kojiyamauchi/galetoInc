@@ -1,0 +1,1353 @@
+@charset "UTF-8";
+/* Google Web Font */
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,900|Ubuntu:400,500|Noto+Sans|Cabin);
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,100italic,400italic);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+/*==================================================================
+
+
+
+
+
+Reset & Default Setting CSS. for All Pages.
+===================================================================*/
+a,
+address,
+article,
+aside,
+audio,
+blockquote,
+body,
+canvas,
+caption,
+code,
+dd,
+div,
+dl,
+dt,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+iframe,
+img,
+input,
+label,
+li,
+mark,
+menu,
+nav,
+ol,
+output,
+p,
+pre,
+ruby,
+section,
+span,
+summary,
+table,
+tbody,
+td,
+textarea,
+th,
+time,
+tr,
+ul,
+video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  /*base font 16px*/
+  font-size: 100%;
+  /*iOS font automatic adjustment none.*/
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-family: "Raleway",'Noto Sans Japanese',"Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: block;
+  clear: both;
+  content: " ";
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+  background: transparent;
+}
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  /*親要素の継承*/
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+img {
+  vertical-align: middle;
+}
+
+li,
+ol,
+ul {
+  list-style-type: none;
+}
+
+table {
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+textarea {
+  resize: vertical;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(8, 178, 224, 0.2);
+}
+
+::-moz-selection {
+  background: rgba(8, 178, 224, 0.2);
+}
+
+.displayPC {
+  display: block !important;
+}
+
+.displaySP {
+  display: none !important;
+}
+
+.displayPR {
+  display: block !important;
+}
+
+.displayLS {
+  display: none !important;
+}
+
+@media all and (orientation: landscape) {
+  .displayPR {
+    display: none !important;
+  }
+
+  .displayLS {
+    display: block !important;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Safari Hack */
+  * {
+    /* Add Property */
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  /* Chrome Hack */
+  * {
+    /* Add Property */
+  }
+}
+@-moz-document url-prefix() {
+  /* FireFox Hack */
+  * {
+    /* Add Property */
+  }
+}
+@media all and (-ms-high-contrast: none) {
+  /* IE Hack */
+  * {
+    /* Add Property */
+  }
+}
+/*==================================================================
+
+
+
+
+
+  Common Parts.
+===================================================================*/
+/* Header & Heading1 CSS. Except For Top Page. */
+body:not(#topPage) header {
+  position: fixed;
+  width: 100%;
+  padding: 10% 0;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9), transparent);
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(transparent));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+@media all and (orientation: landscape) {
+  body:not(#topPage) header {
+    padding: 5% 0 2.5%;
+  }
+}
+body:not(#topPage) header a {
+  position: absolute;
+  top: 5%;
+  color: #fff;
+  font-size: 1em;
+}
+body:not(#topPage) header a.prev {
+  left: 2.5%;
+  white-space: nowrap;
+}
+body:not(#topPage) header a.prev:before {
+  margin: 0 7.5% 0 0;
+  content: "\f0a8";
+  font-family: "FontAwesome";
+}
+body:not(#topPage) header a.next {
+  right: 2.5%;
+  white-space: nowrap;
+}
+body:not(#topPage) header a.next:after {
+  margin: 0 0 0 7.5%;
+  content: "\f0a9";
+  font-family: "FontAwesome";
+}
+body:not(#topPage) header h1 {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0;
+  font-family: "Times New Roman", Symbol;
+  font-size: 3rem;
+  font-weight: 100;
+}
+body:not(#topPage) header h1.fontSmall {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0;
+}
+body:not(#topPage) p {
+  letter-spacing: 0.06em;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1em;
+  line-height: 1.75em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  /* Menu Button */
+  /* Copy Right */
+}
+footer #menuBtn {
+  width: 80%;
+  margin: 0 auto 7%;
+  color: #fff;
+  border: solid 2px #fff;
+  background-color: transparent;
+  font-size: 1em;
+}
+@media all and (orientation: landscape) {
+  footer #menuBtn {
+    margin: 0 0 3%;
+  }
+}
+footer p#copyRight {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 2%;
+  text-align: center !important;
+  letter-spacing: 0.04em !important;
+  text-shadow: none !important;
+  font-size: 0.75em !important;
+  font-weight: bold;
+  line-height: 1 !important;
+}
+footer p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+footer #menuHamburger {
+  position: fixed;
+  right: 0;
+  bottom: 5px;
+  display: inline-block;
+  color: #fff;
+  border: solid 2px rgba(255, 255, 255, 0);
+  background-color: transparent;
+  font-size: 1.5em;
+}
+footer #pageTop {
+  position: fixed;
+  bottom: 5px;
+  left: 0;
+  display: inline-block;
+  display: none;
+  padding: 3px 6px;
+  color: #fff;
+  border: solid 2px rgba(255, 255, 255, 0);
+  background-color: transparent;
+  font-size: 1.25em;
+  line-height: 0.75em;
+}
+footer #pageTop span#text {
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 0;
+}
+footer #borderBottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(103, 206, 234, 0.6);
+}
+
+/* Global Navigation */
+nav {
+  position: fixed;
+  z-index: 999999;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+nav ul {
+  width: 100%;
+  height: 100%;
+}
+nav ul li {
+  width: 100%;
+  height: 11.11111111111111%;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+}
+nav ul li:last-of-type {
+  border-bottom: none;
+}
+nav ul li a {
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  color: #fff;
+  font-size: 1em;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+nav ul li a.current {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+nav ul li a.current:before {
+  content: url("../images/currentLogo.svg");
+  width: 30px;
+  margin: 0 4px 0 -32px;
+  /*content: "\f178";
+  text-indent: -1.5em;
+  font-family: "FontAwesome";*/
+}
+@media all and (orientation: landscape) {
+  nav ul li a.current:before {
+    width: 20px;
+    margin: 0 4px 0 -22px;
+  }
+}
+
+/*  SP URL Bar & Menu Bar Not Hide CSS. */
+#scrollWrap {
+  height: 91vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (min-width: 768px) {
+  #scrollWrap {
+    /* Tablet Portrait. */
+    height: 100vh;
+  }
+}
+@media all and (orientation: landscape) {
+  #scrollWrap {
+    height: 100vh;
+  }
+}
+
+#contactPage #scrollWrap {
+  -webkit-overflow-scrolling: auto;
+}
+
+/*==================================================================
+
+
+
+
+
+  Each Page Back Ground Images.
+===================================================================*/
+body:not(#topPage)::before {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body#topPage #topImageBox {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body#topPage #topImageBox.forAndroid {
+  background-image: url("../images/topPageBackgroundIMG.jpg");
+}
+body#aboutPage::before {
+  background-image: url("../images/aboutPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#worksPage::before {
+  background-image: url("../images/worksPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#companyPage::before {
+  background-image: url("../images/companyPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#recruitPage::before {
+  background-image: url("../images/recruitPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#privacyPolicyPage::before {
+  background-image: url("../images/privacyPolicyPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#contactPage::before {
+  background-image: url("../images/contactPageBackgroundIMG.jpg");
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+body#completePage::before, body#confirmPage::before, body#underConstructionNowPage::before {
+  background: url("../images/background.png") repeat 0 0;
+  background-size: 100px;
+}
+
+/*==================================================================
+
+
+
+
+
+  Top Page Introduction CSS.
+===================================================================*/
+body#topPage.introduction #intro {
+  position: fixed;
+  z-index: 99;
+  display: block;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+body#topPage.introduction #intro #introLogoImagesBox {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  margin: auto;
+  background-color: #fff;
+}
+@media all and (orientation: landscape) {
+  body#topPage.introduction #intro #introLogoImagesBox {
+    width: 20%;
+  }
+}
+body#topPage.introduction #intro #introLogoImagesBox #rainbowAnimationWrap {
+  position: absolute;
+  z-index: 101;
+  width: 100%;
+}
+body#topPage.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock {
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
+  height: 14.28571428571429%;
+}
+body#topPage.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock:first-of-type {
+  top: 1%;
+  height: 13.28571428571429%;
+}
+body#topPage.introduction #intro #introLogoImagesBox #rainbowAnimationWrap .rainbowBlock:last-of-type {
+  height: 13.28571428571429%;
+}
+body#topPage.introduction #intro #introLogoImagesBox img#introLogoMask {
+  position: absolute;
+  z-index: 102;
+  width: 100%;
+}
+body#topPage.introduction #intro #introLogoImagesBox img#introIceCream {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+body#topPage.introduction #intro #introLogoImagesBox img#introIceCreamExclamation {
+  position: absolute;
+  right: 10%;
+  bottom: -1%;
+  width: 10%;
+}
+body#topPage.introduction #intro #introLogoImagesBox img#introIceCreamExclamation.exclamationAnimation {
+  -webkit-animation: rotate 0.175s;
+  animation: rotate 0.175s;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+body#topPage.introduction #intro .fadeAnimation {
+  opacity: 0;
+}
+body#topPage.introduction #intro #colorRed {
+  background-color: RGBa(237, 26, 61, 1);
+}
+body#topPage.introduction #intro #colorOrange {
+  top: 14.28571428571429%;
+  background-color: RGBa(243, 152, 0, 1);
+}
+body#topPage.introduction #intro #colorYellow {
+  top: 28.57142857142858%;
+  background-color: RGBa(255, 212, 0, 1);
+}
+body#topPage.introduction #intro #colorGreen {
+  top: 42.85714285714287%;
+  background-color: RGBa(0, 128, 0, 1);
+}
+body#topPage.introduction #intro #colorLightBlue {
+  top: 57.14285714285716%;
+  background-color: RGBa(175, 223, 228, 1);
+}
+body#topPage.introduction #intro #colorBlue {
+  top: 71.42857142857145%;
+  background-color: RGBa(0, 103, 191, 1);
+}
+body#topPage.introduction #intro #colorPurple {
+  top: 85.71428571428574%;
+  background-color: RGBa(167, 87, 168, 1);
+}
+body#topPage.introduction #intro #introLogoFontOpacity {
+  opacity: 0;
+}
+body#topPage.introduction #fontAnimation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+  margin: auto;
+}
+body#topPage.introduction #fontAnimation img#gelatoLogoFontBlack {
+  position: absolute;
+  opacity: 0;
+}
+@media all and (orientation: landscape) {
+  body#topPage.introduction #fontAnimation img#gelatoLogoFontBlack {
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+@media all and (orientation: landscape) {
+  body#topPage.introduction #fontAnimation #gelatoLogoFontBlackOutLine {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+body#topPage.introduction #fontAnimation #homeSubTitle {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  margin: 3% auto 1.5%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.3125rem;
+}
+body#topPage.introduction #fontAnimation #homeSubTitle span {
+  position: relative;
+  opacity: 0;
+  color: #000;
+}
+body#topPage.introduction #fontAnimation #homeSubTitle span#ls {
+  letter-spacing: -0.04em;
+}
+body#topPage.introduction #fontAnimation #homeSubTitle img {
+  width: 100%;
+}
+body#topPage.introduction header h1 {
+  opacity: 0;
+}
+body#topPage.introduction h2 {
+  opacity: 0;
+}
+body#topPage.introduction button#menuBtn {
+  opacity: 0;
+}
+body#topPage.introduction p#copyRight {
+  opacity: 0;
+}
+
+/*==================================================================
+
+
+
+
+
+  Top Page CSS.
+===================================================================*/
+#topPage #intro {
+  display: none;
+}
+#topPage header {
+  padding: 10% 0 0;
+}
+@media all and (orientation: landscape) {
+  #topPage header {
+    padding: 5% 0 0;
+  }
+}
+#topPage header h1 {
+  width: 95%;
+  margin: 0 auto;
+  text-indent: -99999px;
+  background-image: url("../images/gelatoLogoFontWhite.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#topPage h2 {
+  margin: 5% auto 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-family: Cabin, sans-serif;
+  font-size: 1.3125rem;
+}
+#topPage .vegas-timer {
+  height: 5px;
+}
+#topPage .vegas-timer-progress {
+  background: rgba(103, 206, 234, 0.6);
+}
+
+/*==================================================================
+
+
+
+
+
+  About Page CSS.
+===================================================================*/
+#aboutPage #aboutDescription {
+  padding: 36% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #aboutPage #aboutDescription {
+    padding: 19%;
+  }
+}
+@media all and (orientation: landscape) {
+  #aboutPage footer {
+    position: static;
+    bottom: auto;
+  }
+}
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  #aboutPage footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+/*==================================================================
+  Works Page CSS.
+===================================================================*/
+#worksPage #worksContents {
+  width: 95%;
+  margin: 0 auto;
+  padding: 36% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #worksPage #worksContents {
+    padding: 19%;
+  }
+}
+#worksPage #worksContents h2 {
+  margin: 0 0 4%;
+  text-align: center;
+  font-size: 1.375em;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
+}
+#worksPage #worksContents p {
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.6em;
+  margin: 0 0 16%;
+  padding: 0 0 2%;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.8);
+}
+#worksPage footer {
+  position: static;
+  bottom: auto;
+}
+@media all and (orientation: landscape) {
+  #worksPage footer p#copyRight {
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/*==================================================================
+
+
+
+
+
+  Company Page CSS.
+===================================================================*/
+#companyPage #companyContents {
+  width: 95%;
+  margin: 0 auto;
+  padding: 36% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #companyPage #companyContents {
+    padding: 19%;
+  }
+}
+#companyPage #companyContents dl {
+  width: 100%;
+  width: 100%;
+  margin: 0 0 8%;
+  padding: 0 0 1%;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.8);
+}
+#companyPage #companyContents dl dt {
+  margin: 0 0 2%;
+  text-align: center;
+  font-size: 1.125em;
+}
+#companyPage #companyContents dl dd {
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.6em;
+}
+#companyPage #companyContents dl dd span.fa {
+  vertical-align: middle;
+  font-size: 1.25em;
+}
+#companyPage #companyContents dl dd a {
+  color: #fff;
+}
+#companyPage #companyContents dl dd a span.fa {
+  vertical-align: middle;
+  font-size: 1.25em;
+}
+#companyPage #companyContents dl dd a#googleMap {
+  font-weight: bold;
+}
+#companyPage #companyContents dl dd a#googleMap span.fa {
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+#companyPage footer {
+  position: static;
+  bottom: auto;
+}
+@media all and (orientation: landscape) {
+  #companyPage footer p#copyRight {
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/*==================================================================
+
+
+
+
+
+  Gallery Page CSS.
+===================================================================*/
+/* Go To Instagram.
+/*==================================================================
+
+
+
+
+
+  Recruit Page CSS.
+===================================================================*/
+#recruitPage #recruitDescription {
+  padding: 36% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #recruitPage #recruitDescription {
+    padding: 19%;
+  }
+}
+
+/*==================================================================
+
+
+
+
+
+  Privacy Policy Page CSS.
+===================================================================*/
+#privacyPolicyPage #privacyPolicyDescription {
+  padding: 36% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #privacyPolicyPage #privacyPolicyDescription {
+    padding: 19%;
+  }
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Page CSS.
+===================================================================*/
+#contactPage #contactContents {
+  padding: 33% 8% 8%;
+}
+@media all and (orientation: landscape) {
+  #contactPage #contactContents {
+    padding: 15% 4% 4%;
+  }
+}
+#contactPage #contactContents p {
+  padding: 0 0 7.5%;
+}
+@media all and (orientation: landscape) {
+  #contactPage #contactContents p {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 5%;
+  }
+}
+#contactPage #contactContents span.fa-check {
+  opacity: 0.8;
+  color: #ff0000;
+}
+#contactPage #contactContents form .inputBox {
+  position: relative;
+  margin: 0 0 7.5%;
+  text-align: center;
+}
+@media all and (orientation: landscape) {
+  #contactPage #contactContents form .inputBox {
+    margin: 0 0 3%;
+  }
+}
+#contactPage #contactContents form .inputBox span.fa-check {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+@media all and (orientation: landscape) {
+  #contactPage #contactContents form .inputBox span.fa-check {
+    left: 5%;
+  }
+}
+#contactPage #contactContents form .inputBox input {
+  width: 80%;
+  padding: 6px 12px;
+  color: #fff;
+  border: solid 2px rgba(255, 255, 255, 0);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.42857143;
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form .inputBox input:placeholder-shown {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox input::-webkit-input-placeholder {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox input:-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox input::-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox input:-ms-input-placeholder {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox input.validateError {
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form .inputBox input.validateError:placeholder-shown {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox input.validateError::-webkit-input-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox input.validateError:-moz-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox input.validateError::-moz-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox input.validateError:-ms-input-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox textarea {
+  width: 80%;
+  padding: 6px 12px;
+  color: #fff;
+  border: solid 2px rgba(255, 255, 255, 0);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.42857143;
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form .inputBox textarea:placeholder-shown {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox textarea:-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox textarea::-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox textarea:-ms-input-placeholder {
+  color: #fff;
+}
+#contactPage #contactContents form .inputBox textarea.validateError {
+  /* Google Chrome, Safari, Opera 15+, Android, iOS */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* IE 10+ */
+}
+#contactPage #contactContents form .inputBox textarea.validateError:placeholder-shown {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox textarea.validateError::-webkit-input-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox textarea.validateError:-moz-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox textarea.validateError::-moz-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form .inputBox textarea.validateError:-ms-input-placeholder {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+#contactPage #contactContents form #buttonBox {
+  text-align: center;
+}
+#contactPage #contactContents form #buttonBox button.contactSubmit {
+  display: inline-block;
+  width: 80%;
+  color: #fff;
+  border: solid 2px #fff;
+  background-color: transparent;
+  font-size: 1em;
+}
+#contactPage footer {
+  position: static;
+  bottom: auto;
+  /*p {
+      &#copyRight {
+          margin: 0 auto 5%;
+      }
+  }*/
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Confirm Page CSS.
+===================================================================*/
+#confirmPage #formWrap {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#confirmPage #formWrap h3 {
+  margin: 0 0 3%;
+  padding: 5% 0 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1.5em;
+}
+@media all and (orientation: landscape) {
+  #confirmPage #formWrap h3 {
+    margin: 0 0 2%;
+    padding: 3% 0 0;
+  }
+}
+#confirmPage #formWrap p {
+  width: 95%;
+  margin: 0 auto 3%;
+}
+@media all and (orientation: landscape) {
+  #confirmPage #formWrap p {
+    text-align: center;
+  }
+}
+#confirmPage #formWrap form {
+  width: 100%;
+}
+#confirmPage #formWrap form table {
+  width: 95%;
+  margin: 0 auto 3%;
+}
+#confirmPage #formWrap form table tr:nth-of-type(5) {
+  display: none;
+}
+#confirmPage #formWrap form table tr th {
+  width: 40%;
+  padding: 0 0 2.5%;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1em;
+}
+#confirmPage #formWrap form table tr td {
+  width: 60%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-family: "Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 1em;
+}
+#confirmPage #formWrap form #btnBox {
+  text-align: center;
+}
+#confirmPage #formWrap form #btnBox .btn {
+  width: 35%;
+  margin: 0 6%;
+  color: #fff;
+  color: #fff;
+  border: solid 2px #fff;
+  background-color: transparent;
+  box-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1em;
+  font-weight: bold;
+}
+#confirmPage #formWrap form #btnBox .btn.send {
+  margin: 0 2% 0 0;
+}
+#confirmPage #formWrap form #btnBox .btn.back {
+  margin: 0 0 0 2%;
+}
+#confirmPage #formWrap footer p#copyRight {
+  width: 100%;
+  margin: 0 auto;
+  text-shadow: 1px 1px 1px #000 !important;
+}
+
+/*==================================================================
+
+
+
+
+
+  Contact Complete Page CSS.
+===================================================================*/
+#completePage #completeWrap {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#completePage #completeWrap p {
+  width: 95%;
+  margin: 0 auto 5%;
+  padding: 5% 0 0;
+  text-align: center;
+}
+#completePage #completeWrap #btnBox {
+  text-align: center;
+}
+#completePage #completeWrap #btnBox .btn {
+  margin: 0;
+  color: #fff;
+  color: #fff;
+  border: solid 2px #fff;
+  background-color: transparent;
+  box-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1em;
+  font-weight: bold;
+}
+#completePage #completeWrap footer p#copyRight {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 2%;
+  text-shadow: 1px 1px 1px #000 !important;
+}
+
+/*==================================================================
+
+
+
+
+
+  Under Construction Now Page CSS.
+===================================================================*/
+#underConstructionNowPage #underConstructionNowContents {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 30% 0 0;
+}
+@media all and (orientation: landscape) {
+  #underConstructionNowPage #underConstructionNowContents {
+    padding: 15% 0 0;
+  }
+}
+#underConstructionNowPage #underConstructionNowContents h1 {
+  margin: 0 0 3%;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+#underConstructionNowPage #underConstructionNowContents p#copyRight {
+  margin: 0 0 4%;
+}
+#underConstructionNowPage #underConstructionNowContents a {
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/*==================================================================
+
+
+
+
+
+  Responsive Media Queries
+===================================================================*/
+/*
+  @media screen and (min-width:2061x){ iMac 27inch.
+  }
+  @media screen and (min-width:1445px) and (max-width:2060px) { iMac 21.5inch.
+  }
+  @media screen and (min-width: 1285px) and (max-width:1444px)  { Large PC.
+  }
+  @media screen and (min-width: 992px) and (max-width:1284px) { Medium PC.
+  }
+  @media screen and (max-width: 991px) { Tablet.
+  }
+  */
+@media screen and (max-width: 768px) {
+  /* Smart Phone. */
+  .displayPC {
+    display: none !important;
+  }
+
+  .displaySP {
+    display: block !important;
+  }
+}
+/*
+@media screen and (max-width:480px) { Small Smart Phone.
+html {
+font-size: addBaseFontSize ;
+}
+}
+*/
+@media screen and (max-width: 385px) {
+  /* Extra Small Smart Phone. */
+  html {
+    font-size: 65%;
+  }
+}
+/*
+  Mac PC Default Window Width.
+-iMac 27inch & iMac 27inch Retina Display-
+width: 2560;
+
+-iMac 21.5inch-
+width: 2048;
+
+-MacBook Pro 15inch Retina Display-
+width: 1440;
+
+-MacBook Pro 13inch Retina Display-
+width: 1440;
+
+-MacBook Air 13inch-
+width: 1440;
+
+-MacBook Air 11inch-
+width: 1366;
+
+-MacBook 12inch Retina Display-
+width: 1280;
+*/
+
+/*# sourceMappingURL=gelatoSP.css.map */
