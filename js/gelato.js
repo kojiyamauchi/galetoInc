@@ -165,24 +165,6 @@ jQuery(function ($) {
         };
     })(jQuery);
 
-    //menuToggle
-    $(".btnMenu").eventToggle(function () {
-        $("nav.usersNavi").slideDown(500, "swing");
-    }, function () {
-        $("nav.usersNavi").slideUp(500, "swing");
-    });
-
-    //getCurrent
-    $("nav.usersNavi ul li a").each(function () {
-        var $href = $(this).attr("href");
-        if(location.href.match($href)) {
-            $(this).addClass("usersNaviCurrent");
-        } else {
-            $(this).removeClass("usersNaviCurrent");
-        }
-    });
-
-
     // Layout Sorting Functions.=============================
     function layOutSorting() {
 
