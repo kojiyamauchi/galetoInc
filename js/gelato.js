@@ -405,11 +405,11 @@ jQuery(function ($) {
             companyPagePosition = $("#companyPage").offset().top;
 
         if(windowHeight + 200 <= windowTopPosition) {
-            // 20160806 animation change. $("nav#fixedNavi").slideDown();
-            $('nav#fixedNavi').addClass('show');
+            $("nav#fixedNavi").slideDown();
+            // 20160807 animation change. $('nav#fixedNavi').addClass('show');
         } else {
-            // 20160806 animation change. $("nav#fixedNavi").slideUp();
-            $('nav#fixedNavi').removeClass('show');
+            $("nav#fixedNavi").slideUp();
+            // 20160807 animation change. $('nav#fixedNavi').removeClass('show');
         }
         if(aboutPagePosition <= windowTopPosition && windowTopPosition <= (aboutPagePosition + windowHeight)) {
             $("a#fixedNaviAbout").css({

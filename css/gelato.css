@@ -285,25 +285,21 @@ nav#fixedNavi {
   position: fixed;
   z-index: 99999;
   top: 0;
-  /* 20160806 animation change. */
-  /*display: none;*/
+  display: none;
   width: 100%;
   min-width: 1000px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
-  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
-  -webkit-transform-origin: center top 0;
-  -ms-transform-origin: center top 0;
-  transform-origin: center top 0;
   border-top: solid 5px rgba(8, 178, 224, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
-}
-nav#fixedNavi.show {
-  -webkit-transition: all 0.5s;
+  /* 20160807 animation change. */
+  /*
   transition: all 0.5s;
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
+  transform-origin: center top 0;
+  &.show {
+      transition: all 0.5s;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  */
 }
 nav#fixedNavi ul#naviWrap {
   display: -webkit-box;
