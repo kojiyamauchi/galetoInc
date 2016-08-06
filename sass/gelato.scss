@@ -264,18 +264,26 @@ nav#fixedNavi {
     position: fixed;
     z-index: 99999;
     top: 0;
-    display: none;
+    /* 20160806 animation change. */
+    /*display: none;*/
     width: 100%;
     min-width: 1000px;
+    transition: all 0.5s;
+    transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
+    transform-origin: center top 0;
     border-top: solid 5px rgba(8,178,224,0.5);
     background-color: rgba(255,255,255,0.5);
+    &.show {
+        transition: all 0.5s;
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
     ul#naviWrap {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         width: 66.666667%;
         min-width: 960px;
         margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
         li {
             width: 11.01190476190471%;
             -webkit-transition: all 0.5s;
@@ -404,11 +412,11 @@ nav#globalNavi {
     background-color: rgba(255,255,255,0.5);
     ul#naviWrap {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         width: 66.666667%;
         min-width: 960px;
         margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
         li {
             width: 11.01190476190471%;
             text-align: center;

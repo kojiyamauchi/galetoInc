@@ -285,17 +285,34 @@ nav#fixedNavi {
   position: fixed;
   z-index: 99999;
   top: 0;
-  display: none;
+  /* 20160806 animation change. */
+  /*display: none;*/
   width: 100%;
   min-width: 1000px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.00125, 0, 1, 0, 0, 0, 0, 0, 1);
+  -webkit-transform-origin: center top 0;
+  -ms-transform-origin: center top 0;
+  transform-origin: center top 0;
   border-top: solid 5px rgba(8, 178, 224, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
+}
+nav#fixedNavi.show {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 nav#fixedNavi ul#naviWrap {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 66.666667%;
+  min-width: 960px;
+  margin: 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -304,9 +321,6 @@ nav#fixedNavi ul#naviWrap {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 66.666667%;
-  min-width: 960px;
-  margin: 0 auto;
 }
 nav#fixedNavi ul#naviWrap li {
   width: 11.01190476190471%;
@@ -412,6 +426,9 @@ nav#globalNavi ul#naviWrap {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 66.666667%;
+  min-width: 960px;
+  margin: 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -420,9 +437,6 @@ nav#globalNavi ul#naviWrap {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 66.666667%;
-  min-width: 960px;
-  margin: 0 auto;
 }
 nav#globalNavi ul#naviWrap li {
   width: 11.01190476190471%;

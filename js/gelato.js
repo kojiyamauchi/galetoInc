@@ -67,7 +67,6 @@ jQuery(function ($) {
 
     // Gallery Page. Don't Use.
     if(url.indexOf('gallery') > -1) {
-        $('body').addClass('galleryIntro');
         if(Cookies.get('galleryFirstAccess')) {
             $('body').removeClass('galleryIntro');
         }
@@ -87,7 +86,6 @@ jQuery(function ($) {
 
     //Recruit Page.
     if(url.indexOf('recruit') > -1) {
-        $('body').addClass('recruitIntro');
         if(Cookies.get('recruitFirstAccess')) {
             $('body').removeClass('recruitIntro');
             $('#loadingWrap').css({
@@ -407,9 +405,11 @@ jQuery(function ($) {
             companyPagePosition = $("#companyPage").offset().top;
 
         if(windowHeight + 200 <= windowTopPosition) {
-            $("nav#fixedNavi").slideDown();
+            // 20160806 animation change. $("nav#fixedNavi").slideDown();
+            $('nav#fixedNavi').addClass('show');
         } else {
-            $("nav#fixedNavi").slideUp();
+            // 20160806 animation change. $("nav#fixedNavi").slideUp();
+            $('nav#fixedNavi').removeClass('show');
         }
         if(aboutPagePosition <= windowTopPosition && windowTopPosition <= (aboutPagePosition + windowHeight)) {
             $("a#fixedNaviAbout").css({
