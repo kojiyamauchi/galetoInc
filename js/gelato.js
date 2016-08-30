@@ -74,15 +74,58 @@ jQuery(function ($) {
             Cookies.set('galleryFirstAccess', 'first');
         });
     }
+
+    // Privacy Policy Page.
     if(url.indexOf('privacyPolicy') > -1) {
-        $('body').addClass('privacyPolicyIntro');
         if(Cookies.get('privacyPolicyFirstAccess')) {
             $('body').removeClass('privacyPolicyIntro');
+            $('#loadingWrap').css({
+                'display': 'none'
+            });
         }
         $(window).on('load', function () {
             Cookies.set('privacyPolicyFirstAccess', 'first');
         });
     }
+    if($('body').hasClass('privacyPolicyIntro')) {
+        $('html,body').css({
+            'overflow': 'hidden'
+        });
+        $('body.privacyPolicyIntro').css({
+            'display': 'block'
+        });
+        setTimeout(function () {
+            var privacyPolicyLoadingLogoHeight = $('img#loadingIceCreamLogo').height();
+            $('#loading').height(privacyPolicyLoadingLogoHeight).fadeTo(500, 1, function () {
+                $('#loadingIceCreamLogoExclamation').addClass('exclamationAnimation');
+                $('#loadingWrap').delay(1500).fadeOut(500);
+            });
+        }, 100);
+        $('#globalNavi').delay(2750).slideDown(1000);
+        setTimeout(function () {
+            $('#mainImage').addClass('comp');
+            setTimeout(function () {
+                $("#privacyPolicyPage #mainImage h1 span").each(function (index) {
+                    $(this).delay(index * 75).fadeTo(500, 1);
+                });
+                $("#privacyPolicyPage #mainImage h1").animate({
+                    'border-bottom-color': 'rgba(8, 178, 224, 0.5)'
+                }, 1250);
+                setTimeout(function () {
+                    $('#mainImage p:first-of-type').addClass('comp');
+                    setTimeout(function () {
+                        $('#mainImage p:last-of-type').addClass('comp');
+                        setTimeout(function () {
+                            $("#privacyPolicyPage .box").each(function (index) {
+                                $(this).delay(index * 100).fadeTo(1000, 1);
+                            });
+                        }, 500);
+                    }, 250);
+                }, 1250);
+            }, 1000);
+        }, 2750);
+    }
+
 
     //Recruit Page.
     if(url.indexOf('recruit') > -1) {
@@ -216,6 +259,9 @@ jQuery(function ($) {
 
         // Recruit Page.
         $("#recruitPage").height(windowHeight);
+
+        // Privacy Policy Page.
+        $('#privacyPolicyPage').height(windowHeight);
 
         // Loading Logo Height.
         var loadingLogoHeight = $('img#loadingIceCreamLogo').height();

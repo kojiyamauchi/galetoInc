@@ -2386,6 +2386,217 @@ body.recruitIntro #recruitPage #recruitContents p.comp {
 
 
 
+  Privacy Policy Page CSS.
+===================================================================*/
+#privacyPolicyPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 650px !important;
+}
+#privacyPolicyPage #mainImage {
+  width: 100%;
+  height: 37.5%;
+  background-image: url("../images/privacyPolicyPageImage.jpg");
+  background-position: center;
+  background-size: cover;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+  text-align: center;
+}
+#privacyPolicyPage #mainImage h1 {
+  display: inline-block;
+  opacity: 0.8;
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
+  margin: 1.5% 0 1%;
+}
+#privacyPolicyPage #mainImage span {
+  letter-spacing: -0.025em;
+  opacity: 1;
+  color: #000;
+  text-shadow: 3px 3px 2px #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 3.25rem;
+  font-weight: 300;
+  font-style: italic;
+}
+#privacyPolicyPage #mainImage p {
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 1.6em;
+  font-size: 0.875em;
+  color: #000;
+}
+#privacyPolicyPage #mainImage p span {
+  all: inherit;
+  display: inline;
+  font-weight: bold;
+  opacity: 1;
+}
+#privacyPolicyPage #mainImage p a {
+  font-weight: bold;
+}
+#privacyPolicyPage #mainImage p a .underLine {
+  display: block;
+  width: 15%;
+  height: 3px;
+  margin: 2px auto 0;
+  -webkit-transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  text-indent: -10000px;
+  background-color: rgba(8, 178, 224, 0.52);
+}
+#privacyPolicyPage #mainImage p a:hover {
+  cursor: pointer;
+}
+#privacyPolicyPage #mainImage p a:hover .underLine {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#privacyPolicyPage #mainImage p:first-of-type {
+  margin: 0 0 1%;
+}
+#privacyPolicyPage #privacyPolicyContentsTop {
+  width: 66.666667%;
+  height: 37.5%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#privacyPolicyPage #privacyPolicyContentsTop .box {
+  width: 27.5%;
+  padding: 10% 0 0;
+  overflow: hidden;
+}
+#privacyPolicyPage #privacyPolicyContentsTop .box dl dt {
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 0 0 2%;
+}
+#privacyPolicyPage #privacyPolicyContentsTop .box dl dd {
+  letter-spacing: 0.02em;
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.75em;
+}
+#privacyPolicyPage #privacyPolicyContentsTop .box dl dd span {
+  font-weight: 600;
+}
+#privacyPolicyPage #privacyPolicyContentsBottom {
+  width: 66.666667%;
+  height: 25%;
+  letter-spacing: 0.05em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#privacyPolicyPage #privacyPolicyContentsBottom .box {
+  width: 27.5%;
+  padding: 4% 0 0;
+  overflow: hidden;
+}
+#privacyPolicyPage #privacyPolicyContentsBottom .box dl dt {
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 0 0 2%;
+}
+#privacyPolicyPage #privacyPolicyContentsBottom .box dl dd {
+  letter-spacing: 0.02em;
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.75em;
+}
+#privacyPolicyPage #privacyPolicyContentsBottom .box dl dd span {
+  font-weight: 600;
+}
+#privacyPolicyPage p#copyRight {
+  position: fixed;
+  bottom: 0.25%;
+  width: 100%;
+  min-width: 1000px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+#privacyPolicyPage p#copyRight span {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+body.privacyPolicyIntro {
+  display: none;
+}
+body.privacyPolicyIntro #privacyPolicyPage #globalNavi {
+  display: none;
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  opacity: 0;
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage.comp {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  opacity: 1;
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage h1 {
+  border-bottom: solid 5px rgba(8, 178, 224, 0);
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage h1 span {
+  opacity: 0;
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage p {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 15%);
+  -ms-transform: translate(0, 15%);
+  transform: translate(0, 15%);
+  opacity: 0;
+}
+body.privacyPolicyIntro #privacyPolicyPage #mainImage p.comp {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+body.privacyPolicyIntro #privacyPolicyPage #privacyPolicyContentsTop .box {
+  opacity: 0;
+}
+body.privacyPolicyIntro #privacyPolicyPage #privacyPolicyContentsBottom .box {
+  opacity: 0;
+}
+
+/*==================================================================
+
+
+
+
+
   Under Construction Page CSS.
 ===================================================================*/
 #underConstructionNow {

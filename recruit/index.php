@@ -62,7 +62,7 @@
           <li> <a href="../#companyPage">COMPANY<span class="underLine">-</span></a> </li>
           <li id="linkGallery"> <a href="https://www.instagram.com/gelatoinc/" target="_blank">GALLERY<span class="underLine">-</span></a> <span id="instagramIcon">Link To Gelato Inc's Instagram!</span></li>
           <li class="current"> <a href="">RECRUIT<span class="underLine">-</span></a> </li>
-          <li> <a href="../underConstructionNow">PRIVACY POLICY<span class="underLine">-</span></a> </li>
+          <li> <a href="../privacyPolicy">PRIVACY POLICY<span class="underLine">-</span></a> </li>
           <li> <a href="../contact">CONTACT<span class="underLine">-</span></a> </li>
         </ul>
       </nav>
