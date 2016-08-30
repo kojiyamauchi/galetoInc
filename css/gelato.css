@@ -2397,18 +2397,18 @@ body.recruitIntro #recruitPage #recruitContents p.comp {
 #privacyPolicyPage #mainImage {
   width: 100%;
   height: 37.5%;
+  text-align: center;
+  border-top: solid 5px rgba(8, 178, 224, 0.5);
+  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
   background-image: url("../images/privacyPolicyPageImage.jpg");
   background-position: center;
   background-size: cover;
-  border-top: solid 5px rgba(8, 178, 224, 0.5);
-  border-bottom: solid 5px rgba(8, 178, 224, 0.5);
-  text-align: center;
 }
 #privacyPolicyPage #mainImage h1 {
   display: inline-block;
+  margin: 1.5% 0 1%;
   opacity: 0.8;
   border-bottom: solid 5px rgba(8, 178, 224, 0.5);
-  margin: 1.5% 0 1%;
 }
 #privacyPolicyPage #mainImage span {
   letter-spacing: -0.025em;
@@ -2421,16 +2421,18 @@ body.recruitIntro #recruitPage #recruitContents p.comp {
   font-style: italic;
 }
 #privacyPolicyPage #mainImage p {
-  text-shadow: 1px 1px 1px #fff;
-  line-height: 1.6em;
-  font-size: 0.875em;
   color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-family: "Noto Sans Japanese";
+  font-size: 0.875em;
+  line-height: 1.6em;
 }
 #privacyPolicyPage #mainImage p span {
   all: inherit;
+  /* ↑常に上に↑ */
   display: inline;
-  font-weight: bold;
   opacity: 1;
+  font-weight: bold;
 }
 #privacyPolicyPage #mainImage p a {
   font-weight: bold;
@@ -2460,29 +2462,29 @@ body.recruitIntro #recruitPage #recruitContents p.comp {
   margin: 0 0 1%;
 }
 #privacyPolicyPage #privacyPolicyContentsTop {
-  width: 66.666667%;
-  height: 37.5%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 66.666667%;
+  height: 37.5%;
+  margin: 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0 auto;
 }
 #privacyPolicyPage #privacyPolicyContentsTop .box {
+  overflow: hidden;
   width: 27.5%;
   padding: 10% 0 0;
-  overflow: hidden;
 }
 #privacyPolicyPage #privacyPolicyContentsTop .box dl dt {
+  margin: 0 0 2%;
   text-align: center;
   letter-spacing: 0.04em;
   font-size: 0.75em;
   font-weight: bold;
-  margin: 0 0 2%;
 }
 #privacyPolicyPage #privacyPolicyContentsTop .box dl dd {
   letter-spacing: 0.02em;
@@ -2494,30 +2496,30 @@ body.recruitIntro #recruitPage #recruitContents p.comp {
   font-weight: 600;
 }
 #privacyPolicyPage #privacyPolicyContentsBottom {
-  width: 66.666667%;
-  height: 25%;
-  letter-spacing: 0.05em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 66.666667%;
+  height: 25%;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0 auto;
 }
 #privacyPolicyPage #privacyPolicyContentsBottom .box {
+  overflow: hidden;
   width: 27.5%;
   padding: 4% 0 0;
-  overflow: hidden;
 }
 #privacyPolicyPage #privacyPolicyContentsBottom .box dl dt {
+  margin: 0 0 2%;
   text-align: center;
   letter-spacing: 0.04em;
   font-size: 0.75em;
   font-weight: bold;
-  margin: 0 0 2%;
 }
 #privacyPolicyPage #privacyPolicyContentsBottom .box dl dd {
   letter-spacing: 0.02em;
