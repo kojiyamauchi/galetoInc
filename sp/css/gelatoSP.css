@@ -171,14 +171,6 @@ textarea {
   background: rgba(8, 178, 224, 0.2);
 }
 
-.displayPC {
-  display: block !important;
-}
-
-.displaySP {
-  display: none !important;
-}
-
 .displayPR {
   display: block !important;
 }
@@ -943,7 +935,6 @@ body#topPage.introduction p#copyRight {
 }
 #privacyPolicyPage #privacyPolicyContents p.header {
   text-align: center;
-  text-shadow: none;
   line-height: 1.6em;
 }
 #privacyPolicyPage #privacyPolicyContents p.header:first-of-type {
@@ -955,6 +946,7 @@ body#topPage.introduction p#copyRight {
   padding: 0 0 4%;
   border-bottom: solid 1px rgba(255, 255, 255, 0.8);
   font-size: 0.875em;
+  text-shadow: none;
 }
 #privacyPolicyPage #privacyPolicyContents p.header:last-of-type a {
   color: #fff;
@@ -970,6 +962,7 @@ body#topPage.introduction p#copyRight {
   margin: 0 0 2%;
   text-align: center;
   font-size: 1.125em;
+  text-shadow: 1px 1px 1px #000;
 }
 #privacyPolicyPage #privacyPolicyContents dl dd {
   text-align: center;
@@ -1345,61 +1338,9 @@ body#topPage.introduction p#copyRight {
 
   Responsive Media Queries
 ===================================================================*/
-/*
-  @media screen and (min-width:2061x){ iMac 27inch.
-  }
-  @media screen and (min-width:1445px) and (max-width:2060px) { iMac 21.5inch.
-  }
-  @media screen and (min-width: 1285px) and (max-width:1444px)  { Large PC.
-  }
-  @media screen and (min-width: 992px) and (max-width:1284px) { Medium PC.
-  }
-  @media screen and (max-width: 991px) { Tablet.
-  }
-  */
-@media screen and (max-width: 768px) {
-  /* Smart Phone. */
-  .displayPC {
-    display: none !important;
-  }
-
-  .displaySP {
-    display: block !important;
-  }
-}
-/*
-@media screen and (max-width:480px) { Small Smart Phone.
-html {
-font-size: addBaseFontSize ;
-}
-}
-*/
 @media screen and (max-width: 385px) {
   /* Extra Small Smart Phone. */
   html {
     font-size: 65%;
   }
 }
-/*
-  Mac PC Default Window Width.
--iMac 27inch & iMac 27inch Retina Display-
-width: 2560;
-
--iMac 21.5inch-
-width: 2048;
-
--MacBook Pro 15inch Retina Display-
-width: 1440;
-
--MacBook Pro 13inch Retina Display-
-width: 1440;
-
--MacBook Air 13inch-
-width: 1440;
-
--MacBook Air 11inch-
-width: 1366;
-
--MacBook 12inch Retina Display-
-width: 1280;
-*/

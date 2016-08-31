@@ -175,14 +175,6 @@ textarea {
   background: rgba(8, 178, 224, 0.2);
 }
 
-.displayPC {
-  display: block !important;
-}
-
-.displaySP {
-  display: none !important;
-}
-
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari Hack */
   * {
@@ -2677,55 +2669,3 @@ body.privacyPolicyIntro #privacyPolicyPage #privacyPolicyContentsBottom .box {
     font-size: 120%;
   }
 }
-/*
-@media screen and (min-width: 1285px) and (max-width:1444px)  { Large PC.
-}
-@media screen and (min-width: 992px) and (max-width:1284px) { Medium PC.
-}
-@media screen and (max-width: 991px) { Tablet.
-}
-*/
-@media screen and (max-width: 768px) {
-  /* Smart Phone. */
-  .displayPC {
-    display: none !important;
-  }
-
-  .displaySP {
-    display: block !important;
-  }
-}
-/*
-@media screen and (max-width:480px) { Small Smart Phone2.
-html {
-font-size: addBaseFontSize ;
-}
-}
-@media screen and (max-width:385px) { Small Smart Phone1.
-html (
-font-size: addBaseFontSize ;
-)
-}
-
-  Mac PC Default Window Width.
--iMac 27inch & iMac 27inch Retina Display-
-width: 2560;
-
--iMac 21.5inch-
-width: 2048;
-
--MacBook Pro 15inch Retina Display-
-width: 1440;
-
--MacBook Pro 13inch Retina Display-
-width: 1440;
-
--MacBook Air 13inch-
-width: 1440;
-
--MacBook Air 11inch-
-width: 1366;
-
--MacBook 12inch Retina Display-
-width: 1280;
-*/
