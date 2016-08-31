@@ -15,15 +15,13 @@
 <meta property="og:description" content="" />
 <meta property="og:image" content="" />
 <meta property="og:site_name" content="" />
-<link rel="apple-touch-icon" href="images/favicons/" />
-<link rel="shortcut icon" href="../images/favicons/favicon.ico" />
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="mask-icon" href="../images/favicons/" color="">
-<meta name="msapplication-TileColor" content="">
-<meta name="msapplication-TileImage" content="../images/favicons/">
-<meta name="theme-color" content="">
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../images/favicons/manifest.json">
+<link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <!-- Font Awesome CSS --->
@@ -81,7 +79,7 @@
       <div class="box">
         <dl>
           <dt>3.個人情報の第三者への開示・提供の禁止</dt>
-          <dd>当社は、個人情報の取得、利用にあたっては、その利用目的を特定することとし、特定された利用目的の達成に必要な範囲を超えた個人情報の取扱い（目的外当社は、本人の同意を得ている場合や法令に基づく場合等を除き、取得した個人情報を第三者に提供することはいたしません。</dd>
+          <dd>当社は、本人の同意を得ている場合や法令に基づく場合等を除き、取得した個人情報を第三者に提供することはいたしません。</dd>
         </dl>
       </div>
     </div>

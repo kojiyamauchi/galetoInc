@@ -15,15 +15,13 @@
 <meta property="og:description" content="" />
 <meta property="og:image" content="" />
 <meta property="og:site_name" content="" />
-<link rel="apple-touch-icon" href="../images/favicons/" />
-<link rel="shortcut icon" href="../images/favicons/favicon.ico" />
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="icon" type="image/png" href="../images/favicons/" sizes="">
-<link rel="mask-icon" href="../images/favicons/" color="">
-<meta name="msapplication-TileColor" content="">
-<meta name="msapplication-TileImage" content="../images/favicons/">
-<meta name="theme-color" content="">
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../images/favicons/manifest.json">
+<link rel="mask-icon" href="../../images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
 <!-- Font Awesome CSS --->
@@ -89,7 +87,7 @@
       <a href="../recruit/">RECRUIT</a>
     </li>
     <li>
-      <a href="../underConstructionNow/">PRIVACY POLICY</a>
+      <a href="../privacyPolicy/">PRIVACY POLICY</a>
     </li>
     <li>
       <a href="../contact/">CONTACT</a>
