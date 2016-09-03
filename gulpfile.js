@@ -10,11 +10,13 @@ var gulp = require("gulp"), // call gulp.
     noCompressionImagesFoldSP = (["sp/noCompressionImages/*.jpg", "sp/noCompressionImages/*.jpeg", "sp/noCompressionImages/*.png", "sp/noCompressionImages/*.gif", "sp/noCompressionImages/*.svg"]), // no compression images fold.
     compressionImageFoldSP = "sp/images/", // finish compression images fold.
     autoprefixer = require("gulp-autoprefixer"), // add vendor prefix in CSS automatically.
+    rename = require("gulp-rename"), // File Rename PlugIn.
+    del = require("del"), // File Delete, Not Gulp PlugIn.
     ftp = require("vinyl-ftp"), // ftp plugin.
     sftp = require("gulp-sftp"), // sftp plugin.
     using_PHP_LocalServerConnect = require("gulp-connect-php"), // using php local server connect plugin.
     browserSync = require("browser-sync"), // local browser sync plugin.
-    upLoadFileWrite = (["index.php", "**/*.php", "*.html", "**/*.html", "css/*.css", "css/**/*", "css/*.css.map", "sass/*.scss", "js/*.js", "images/*", "font/*", "video/*", "sp/css/*.css", "sp/css/**/*", "sp/css/*.css.map", "sp/sass/*.scss", "sp/js/*.js", "sp/images/*"]), // upload file write.
+    upLoadFileWrite = (["index.php", "**/*.php", "*.html", "**/*.html", "css/*.css", "css/**/*", "css/*.css.map", "sass/*.scss", "js/*.js", "images/*", "font/*", "video/*", "sp/css/*.css", "sp/css/**/*", "sp/css/*.css.map", "sp/sass/*.scss", "sp/js/*.js", "sp/images/*", "browserconfig.xml"]), // upload file write.
     notUpLoadFileWrite = (["!css/ie.css", "!css/print.css", "!css/screen.css", "!css/ie.css.map", "!css/print.css.map", "!css/screen.css.map", "!sass/ie.scss", "!sass/print.scss", "!sass/screen.scss", "!**/.DS_Store", "!node_modules/**/*"]), // don't upload file write.
     upLoadFile = upLoadFileWrite.concat(notUpLoadFileWrite); //ftp upload file. variable upLoadFileWrite concatenate variable notUpLoadFileWrite.
 
@@ -59,6 +61,20 @@ gulp.task("autoprefixerSP", function () {
             cascade: false
         }))
         .pipe(gulp.dest("sp/css/"));
+});
+
+// HTML File Rename PHP File. Setting at The Work Start.
+gulp.task("rename", function () {
+    gulp.src('index.html')
+        .pipe(rename({
+            extname: '.php'
+        }))
+        .pipe(gulp.dest('.'));
+});
+
+// HTML File & .DS_Store Delete. Setting at The Work Start.
+gulp.task("delete", function (cb) {
+    del(["index.html", "**/.DS_Store"], cb);
 });
 
 // compression images.
@@ -121,8 +137,8 @@ gulp.task("ftpUpLoad", function () {
             base: ".",
             buffer: false
         })
-        .pipe(ftpConnect.newer("***"))
-        .pipe(ftpConnect.dest("***"));
+        .pipe(ftpConnect.newer("/works/gelatoInc/"))
+        .pipe(ftpConnect.dest("/works/gelatoInc/"));
 });
 
 // gulp default task, terminal command "gulp".
@@ -133,6 +149,8 @@ gulp.task("default", ["browserSync"], function () { // first task, local server 
     gulp.watch("sp/sass/*.scss", ["compassSP"]); // watching sass file save's auto compile, using compass SP.
     gulp.watch("css/*.css", ["autoprefixer"]); // watching change's CSS flie. add vendor prefix automatically.
     gulp.watch("sp/css/*.css", ["autoprefixerSP"]); // watching change's CSS flie. add vendor prefix automatically.
-    gulp.watch(upLoadFile, ["ftpUpLoad"]); //watching file save's auto ftp upload.
+    //gulp.watch("**/*", ["rename"]); // watching change's HTML flie. Rename PHP file.
+    //gulp.watch("**/*", ["delete"]); // watching rename PHP file. delet HTML file.
+    //gulp.watch(upLoadFile, ["ftpUpLoad"]); // watching file save's auto ftp upload.
     gulp.watch(upLoadFile, ["localBrowserReload"]); // watching file save's local browser reload.
 });
