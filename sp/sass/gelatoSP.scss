@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "compass";
 /* Google Web Font */
 @import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,900|Ubuntu:400,500|Noto+Sans|Cabin);
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,100italic,400italic);
@@ -70,6 +69,7 @@ video {
     font-weight: normal;
     font-style: normal;
 }
+
 html {
     width: 100%;
     height: 100%;
@@ -79,6 +79,7 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
+
 body {
     position: relative;
     width: 100%;
@@ -87,6 +88,7 @@ body {
     font-family: "Raleway",'Noto Sans Japanese',"Helvetica Neue", Helvetica, arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     line-height: 1;
 }
+
 article,
 aside,
 details,
@@ -100,63 +102,78 @@ nav,
 section {
     display: block;
 }
+
 .clear {
     clear: both;
 }
+
 .clearfix:after,
 .clearfix:before {
     display: block;
     clear: both;
     content: " ";
 }
+
 a {
     text-decoration: none;
     color: #444;
     background: transparent;
 }
+
 a:active,
 a:hover,
 a:link,
 a:visited {
     text-decoration: none;
 }
+
 a:hover {
     color: inherit;
     /*親要素の継承*/
     @include opacity(1);
 }
+
 a.current {}
+
 img {
     vertical-align: middle;
 }
+
 li,
 ol,
 ul {
     list-style-type: none;
 }
+
 table {
     table-layout: fixed;
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 textarea {
     resize: vertical;
 }
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
+
 ::selection {
     background: rgba(8, 178, 224, 0.2);
 }
+
 ::-moz-selection {
     background: rgba(8, 178, 224, 0.2);
 }
+
 .displayPR {
     display: block !important;
 }
+
 .displayLS {
     display: none !important;
 }
@@ -164,6 +181,7 @@ textarea {
     .displayPR {
         display: none !important;
     }
+
     .displayLS {
         display: block !important;
     }
@@ -214,23 +232,28 @@ body {
             @media all and (orientation: landscape) {
                 padding: 5% 0 2.5%;
             }
+
             a {
                 position: absolute;
                 top: 5%;
                 color: #fff;
                 font-size: 1em;
+
                 &.prev {
                     left: 2.5%;
                     white-space: nowrap;
+
                     &:before {
                         margin: 0 7.5% 0 0;
                         content: "\f0a8";
                         font-family: "FontAwesome";
                     }
                 }
+
                 &.next {
                     right: 2.5%;
                     white-space: nowrap;
+
                     &:after {
                         margin: 0 0 0 7.5%;
                         content: "\f0a9";
@@ -238,6 +261,7 @@ body {
                     }
                 }
             }
+
             h1 {
                 -webkit-transition: all 0.25s;
                 -moz-transition: all 0.25s;
@@ -253,6 +277,7 @@ body {
                 font-family: "Times New Roman", Symbol;
                 font-size: 3rem;
                 font-weight: 100;
+
                 &.fontSmall {
                     -webkit-transition: all 0.25s;
                     -moz-transition: all 0.25s;
@@ -266,6 +291,7 @@ body {
                 }
             }
         }
+
         p {
             letter-spacing: 0.06em;
             text-shadow: 1px 1px 1px #000;
@@ -274,6 +300,7 @@ body {
         }
     }
 }
+
 footer {
     position: absolute;
     bottom: 0;
@@ -303,12 +330,14 @@ footer {
             font-size: 0.75em !important;
             font-weight: bold;
             line-height: 1 !important;
+
             span {
                 font-family: "Helvetica Neue", sans-serif;
                 font-weight: bold;
             }
         }
     }
+
     #menuHamburger {
         position: fixed;
         right: 0;
@@ -319,6 +348,7 @@ footer {
         background-color: transparent;
         font-size: 1.5em;
     }
+
     #pageTop {
         position: fixed;
         bottom: 5px;
@@ -331,6 +361,7 @@ footer {
         background-color: transparent;
         font-size: 1.25em;
         line-height: 0.75em;
+
         span {
             &#text {
                 font-size: 0.75rem;
@@ -339,6 +370,7 @@ footer {
             }
         }
     }
+
     #borderBottom {
         position: fixed;
         bottom: 0;
@@ -357,16 +389,20 @@ nav {
     height: 0;
     opacity: 0;
     background-color: rgba(0,0,0,0.85);
+
     ul {
         width: 100%;
         height: 100%;
+
         li {
             width: 100%;
             height: 11.11111111111111%;
             border-bottom: solid 1px rgba(255,255,255,0.4);
+
             &:last-of-type {
                 border-bottom: none;
             }
+
             a {
                 display: -webkit-flex;
                 display: flex;
@@ -377,9 +413,11 @@ nav {
                 align-items: center;
                 -webkit-justify-content: center;
                 justify-content: center;
+
                 &.current {
                     font-size: 1.25em;
                     font-weight: bold;
+
                     &:before {
                         width: 30px;
                         margin: 0 4px 0 -32px;
@@ -410,6 +448,7 @@ nav {
         height: 100vh;
     }
 }
+
 #contactPage {
     #scrollWrap {
         -webkit-overflow-scrolling: auto;
@@ -439,6 +478,7 @@ body {
             background-size: cover;
         }
     }
+
     &#topPage {
         #topImageBox {
             position: fixed;
@@ -452,11 +492,13 @@ body {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+
             &.forAndroid {
                 background-image: url('../images/topPageBackgroundIMG.jpg');
             }
         }
     }
+
     &#aboutPage {
         &::before {
             background-image: url('../images/aboutPageBackgroundIMG.jpg');
@@ -464,6 +506,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#worksPage {
         &::before {
             background-image: url('../images/worksPageBackgroundIMG.jpg');
@@ -471,6 +514,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#companyPage {
         &::before {
             background-image: url('../images/companyPageBackgroundIMG.jpg');
@@ -478,6 +522,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#recruitPage {
         &::before {
             background-image: url('../images/recruitPageBackgroundIMG.jpg');
@@ -485,6 +530,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#privacyPolicyPage {
         &::before {
             background-image: url('../images/privacyPolicyPageBackgroundIMG.jpg');
@@ -492,6 +538,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#contactPage {
         &::before {
             background-image: url('../images/contactPageBackgroundIMG.jpg');
@@ -499,6 +546,7 @@ body {
             filter: brightness(70%);
         }
     }
+
     &#completePage,
     &#confirmPage,
     &#underConstructionNowPage {
@@ -527,6 +575,7 @@ body {
                 width: 100%;
                 height: 100%;
                 background-color: #fff;
+
                 #introLogoImagesBox {
                     position: absolute;
                     z-index: 100;
@@ -540,39 +589,47 @@ body {
                     @media all and (orientation: landscape) {
                         width: 20%;
                     }
+
                     #rainbowAnimationWrap {
                         position: absolute;
                         z-index: 101;
                         width: 100%;
+
                         .rainbowBlock {
                             position: absolute;
                             left: 2.5%;
                             width: 95%;
                             height: 14.28571428571429%;
+
                             &:first-of-type {
                                 top: 1%;
                                 height: 13.28571428571429%;
                             }
+
                             &:last-of-type {
                                 height: 13.28571428571429%;
                             }
                         }
                     }
+
                     img#introLogoMask {
                         position: absolute;
                         z-index: 102;
                         width: 100%;
                     }
+
                     img#introIceCream {
                         position: absolute;
                         bottom: 0;
                         width: 100%;
                     }
+
                     img#introIceCreamExclamation {
                         position: absolute;
                         right: 10%;
                         bottom: -1%;
                         width: 10%;
+
                         &.exclamationAnimation {
                             -webkit-animation: rotate 0.175s;
                             animation: rotate 0.175s;
@@ -583,12 +640,15 @@ body {
                             0% {
                                 transform: rotate(0deg);
                             }
+
                             30% {
                                 transform: rotate(-20deg);
                             }
+
                             60% {
                                 transform: rotate(20deg);
                             }
+
                             100% {
                                 transform: rotate(0deg);
                             }
@@ -597,52 +657,65 @@ body {
                             0% {
                                 -webkit-transform: rotate(0deg);
                             }
+
                             30% {
                                 -webkit-transform: rotate(-20deg);
                             }
+
                             60% {
                                 -webkit-transform: rotate(20deg);
                             }
+
                             100% {
                                 -webkit-transform: rotate(0deg);
                             }
                         }
                     }
                 }
+
                 .fadeAnimation {
                     opacity: 0;
                 }
+
                 #colorRed {
                     background-color: RGBa(237, 26, 61, 1);
                 }
+
                 #colorOrange {
                     top: 14.28571428571429%;
                     background-color: RGBa(243, 152, 0, 1);
                 }
+
                 #colorYellow {
                     top: 28.57142857142858%;
                     background-color: RGBa(255, 212, 0, 1);
                 }
+
                 #colorGreen {
                     top: 42.85714285714287%;
                     background-color: RGBa(0, 128, 0, 1);
                 }
+
                 #colorLightBlue {
                     top: 57.14285714285716%;
                     background-color: RGBa(175, 223, 228, 1);
                 }
+
                 #colorBlue {
                     top: 71.42857142857145%;
                     background-color: RGBa(0, 103, 191, 1);
                 }
+
                 #colorPurple {
                     top: 85.71428571428574%;
                     background-color: RGBa(167, 87, 168, 1);
                 }
+
                 #introLogoFontOpacity {
                     opacity: 0;
                 }
             }
+
             #fontAnimation {
                 position: absolute;
                 top: 0;
@@ -651,6 +724,7 @@ body {
                 left: 0;
                 width: 95%;
                 margin: auto;
+
                 img {
                     &#gelatoLogoFontBlack {
                         position: absolute;
@@ -663,12 +737,14 @@ body {
                         }
                     }
                 }
+
                 #gelatoLogoFontBlackOutLine {
                     @media all and (orientation: landscape) {
                         width: 90%;
                         margin: 0 auto;
                     }
                 }
+
                 #homeSubTitle {
                     position: relative;
                     z-index: 100;
@@ -678,32 +754,39 @@ body {
                     letter-spacing: 0.02em;
                     font-family: 'Cabin', sans-serif;
                     font-size: 1.3125rem;
+
                     span {
                         position: relative;
                         opacity: 0;
                         color: #000;
+
                         &#ls {
                             letter-spacing: -0.04em;
                         }
                     }
+
                     img {
                         width: 100%;
                     }
                 }
             }
+
             header {
                 h1 {
                     opacity: 0;
                 }
             }
+
             h2 {
                 opacity: 0;
             }
+
             button {
                 &#menuBtn {
                     opacity: 0;
                 }
             }
+
             p {
                 &#copyRight {
                     opacity: 0;
@@ -724,11 +807,13 @@ body {
     #intro {
         display: none;
     }
+
     header {
         padding: 10% 0 0;
         @media all and (orientation: landscape) {
             padding: 5% 0 0;
         }
+
         h1 {
             width: 95%;
             margin: 0 auto;
@@ -739,6 +824,7 @@ body {
             background-size: cover;
         }
     }
+
     h2 {
         margin: 5% auto 0;
         text-align: center;
@@ -746,9 +832,11 @@ body {
         font-family: Cabin, sans-serif;
         font-size: 1.3125rem;
     }
+
     .vegas-timer {
         height: 5px;
     }
+
     .vegas-timer-progress {
         background: rgba(103, 206, 234, 0.6);
     }
@@ -764,8 +852,10 @@ body {
 #aboutPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {}
     }
+
     #aboutDescription {
         padding: 36% 8% 8%;
         @media all and (orientation: landscape) {
@@ -791,8 +881,10 @@ body {
 #worksPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {}
     }
+
     #worksContents {
         width: 95%;
         margin: 0 auto;
@@ -800,6 +892,7 @@ body {
         @media all and (orientation: landscape) {
             padding: 19%;
         }
+
         h2 {
             margin: 0 0 4%;
             text-align: center;
@@ -807,6 +900,7 @@ body {
             font-size: 1.375em;
             font-weight: bold;
         }
+
         p {
             margin: 0 0 16%;
             padding: 0 0 2%;
@@ -816,6 +910,7 @@ body {
             line-height: 1.6em;
         }
     }
+
     footer {
         position: static;
         bottom: auto;
@@ -841,8 +936,10 @@ body {
 #companyPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {}
     }
+
     #companyContents {
         width: 95%;
         margin: 0 auto;
@@ -850,37 +947,45 @@ body {
         @media all and (orientation: landscape) {
             padding: 19%;
         }
+
         dl {
             width: 100%;
             width: 100%;
             margin: 0 0 8%;
             padding: 0 0 1%;
             border-bottom: solid 1px rgba(255,255,255,0.8);
+
             dt {
                 margin: 0 0 2%;
                 text-align: center;
                 font-size: 1.125em;
             }
+
             dd {
                 text-align: center;
                 font-size: 1em;
                 line-height: 1.6em;
+
                 span {
                     &.fa {
                         vertical-align: middle;
                         font-size: 1.25em;
                     }
                 }
+
                 a {
                     color: #fff;
+
                     span {
                         &.fa {
                             vertical-align: middle;
                             font-size: 1.25em;
                         }
                     }
+
                     &#googleMap {
                         font-weight: bold;
+
                         span {
                             &.fa {
                                 vertical-align: middle;
@@ -892,6 +997,7 @@ body {
             }
         }
     }
+
     footer {
         position: static;
         bottom: auto;
@@ -926,8 +1032,10 @@ body {
 #recruitPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {}
     }
+
     #recruitDescription {
         padding: 36% 8% 8%;
         @media all and (orientation: landscape) {
@@ -946,10 +1054,12 @@ body {
 #privacyPolicyPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {
             font-size: 2.5rem !important;
         }
     }
+
     #privacyPolicyContents {
         width: 95%;
         margin: 0 auto;
@@ -957,38 +1067,45 @@ body {
         @media all and (orientation: landscape) {
             padding: 19%;
         }
+
         p {
             &.header {
                 text-align: center;
                 line-height: 1.6em;
+
                 &:first-of-type {
                     padding: 4% 0 0;
                     font-size: 1.125em;
                 }
+
                 &:last-of-type {
                     margin: 0 0 12%;
                     padding: 0 0 4%;
                     border-bottom: solid 1px rgba(255,255,255,0.8);
                     font-size: 0.875em;
                     text-shadow: none;
+
                     a {
                         color: #fff;
                     }
                 }
             }
         }
+
         dl {
             width: 100%;
             width: 100%;
             margin: 0 0 12%;
             padding: 0 0 4%;
             border-bottom: solid 1px rgba(255,255,255,0.8);
+
             dt {
                 margin: 0 0 2%;
                 text-align: center;
                 font-size: 1.125em;
                 text-shadow: 1px 1px 1px #000;
             }
+
             dd {
                 text-align: center;
                 font-size: 1em;
@@ -996,6 +1113,7 @@ body {
             }
         }
     }
+
     footer {
         position: static;
         bottom: auto;
@@ -1021,13 +1139,16 @@ body {
 #contactPage {
     header {
         @media all and (orientation: landscape) {}
+
         h1 {}
     }
+
     #contactContents {
         padding: 33% 8% 8%;
         @media all and (orientation: landscape) {
             padding: 15% 4% 4%;
         }
+
         p {
             padding: 0 0 7.5%;
             @media all and (orientation: landscape) {
@@ -1036,12 +1157,14 @@ body {
                 padding: 0 0 5%;
             }
         }
+
         span {
             &.fa-check {
                 opacity: 0.8;
                 color: #ff0000;
             }
         }
+
         form {
             .inputBox {
                 position: relative;
@@ -1050,6 +1173,7 @@ body {
                 @media all and (orientation: landscape) {
                     margin: 0 0 3%;
                 }
+
                 span {
                     &.fa-check {
                         position: absolute;
@@ -1065,6 +1189,7 @@ body {
                         }
                     }
                 }
+
                 input {
                     width: 80%;
                     padding: 6px 12px;
@@ -1075,6 +1200,7 @@ body {
                     font-size: 1em;
                     font-weight: 400;
                     line-height: 1.42857143;
+
                     &:placeholder-shown {
                         color: #fff;
                     }
@@ -1096,6 +1222,7 @@ body {
                     &:-ms-input-placeholder {
                         color: #fff;
                     }
+
                     &.validateError {
                         &:placeholder-shown {
                             color: #ff0000;
@@ -1123,6 +1250,7 @@ body {
                         }
                     }
                 }
+
                 textarea {
                     width: 80%;
                     padding: 6px 12px;
@@ -1133,6 +1261,7 @@ body {
                     font-size: 1em;
                     font-weight: 400;
                     line-height: 1.42857143;
+
                     &:placeholder-shown {
                         color: #fff;
                     }
@@ -1154,6 +1283,7 @@ body {
                     &:-ms-input-placeholder {
                         color: #fff;
                     }
+
                     &.validateError {
                         &:placeholder-shown {
                             color: #ff0000;
@@ -1182,8 +1312,10 @@ body {
                     }
                 }
             }
+
             #buttonBox {
                 text-align: center;
+
                 button {
                     &.contactSubmit {
                         display: inline-block;
@@ -1197,6 +1329,7 @@ body {
             }
         }
     }
+
     footer {
         position: static;
         bottom: auto;
@@ -1219,6 +1352,7 @@ body {
     #formWrap {
         height: 100%;
         background-color: rgba(0,0,0,0.4);
+
         h3 {
             margin: 0 0 3%;
             padding: 5% 0 0;
@@ -1230,6 +1364,7 @@ body {
                 padding: 3% 0 0;
             }
         }
+
         p {
             width: 95%;
             margin: 0 auto 3%;
@@ -1237,15 +1372,19 @@ body {
                 text-align: center;
             }
         }
+
         form {
             width: 100%;
+
             table {
                 width: 95%;
                 margin: 0 auto 3%;
+
                 tr {
                     &:nth-of-type(5) {
                         display: none;
                     }
+
                     th {
                         width: 40%;
                         padding: 0 0 2.5%;
@@ -1253,6 +1392,7 @@ body {
                         text-shadow: 1px 1px 1px #000;
                         font-size: 1em;
                     }
+
                     td {
                         width: 60%;
                         text-align: center;
@@ -1263,8 +1403,10 @@ body {
                     }
                 }
             }
+
             #btnBox {
                 text-align: center;
+
                 .btn {
                     width: 35%;
                     margin: 0 6%;
@@ -1276,15 +1418,18 @@ body {
                     text-shadow: 1px 1px 1px #000;
                     font-size: 1em;
                     font-weight: bold;
+
                     &.send {
                         margin: 0 2% 0 0;
                     }
+
                     &.back {
                         margin: 0 0 0 2%;
                     }
                 }
             }
         }
+
         footer {
             p {
                 &#copyRight {
@@ -1308,14 +1453,17 @@ body {
     #completeWrap {
         height: 100%;
         background-color: rgba(0,0,0,0.4);
+
         p {
             width: 95%;
             margin: 0 auto 5%;
             padding: 5% 0 0;
             text-align: center;
         }
+
         #btnBox {
             text-align: center;
+
             .btn {
                 margin: 0;
                 color: #fff;
@@ -1328,6 +1476,7 @@ body {
                 font-weight: bold;
             }
         }
+
         footer {
             p {
                 &#copyRight {
@@ -1357,6 +1506,7 @@ body {
         @media all and (orientation: landscape) {
             padding: 15% 0 0;
         }
+
         h1 {
             margin: 0 0 3%;
             text-align: center;
@@ -1364,11 +1514,13 @@ body {
             font-size: 1.25em;
             line-height: 1.5;
         }
+
         p {
             &#copyRight {
                 margin: 0 0 4%;
             }
         }
+
         a {
             color: #fff;
             text-shadow: 1px 1px 1px #000;
