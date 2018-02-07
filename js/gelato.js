@@ -944,7 +944,7 @@ jQuery(function ($) {
         };
         var styleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
         map.mapTypes.set("colorScheme", styleType);
-        map.setMapTypeId("colorScheme");
+        //map.setMapTypeId("colorScheme");
     }
 
     callingGoogleMap();
