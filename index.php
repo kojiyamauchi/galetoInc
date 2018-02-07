@@ -100,13 +100,13 @@
           <div id="topHomeContentsMainImageBox"></div>
           <div id="topHomeContentsMainImageIceCreamLogoBox"> <img src="images/topPageHomeContentsIceCreamLogo.svg" alt="topPageHomeContentsIceCreamLogo" id="topPageHomeContentsIceCreamLogo"/> <img src="images/topPageHomeContentsIceCreamLogoExclamation.svg" alt="topPageHomeContentsIceCreamLogoExclamation" id="topPageHomeContentsIceCreamLogoExclamation"/> </div>
           <p id="topHomeContentsCopyRight"> COPYRIGHT ©<span><?php echo date('Y'); ?></span> GELATO Inc. </p>
+          <button class="btn btn-default scrollButton" type="button">Scroll<br>
+          <span class="fa fa-forward"></span></button>
         </div>
         <div id="slideImageBox">
           <p id="slideImageBoxCopyRight"> COPYRIGHT ©<span><?php echo date('Y'); ?></span> GELATO Inc. </p>
         </div>
       </div>
-        <button class="btn btn-default scrollButton" type="button">Scroll<br>
-        <span class="fa fa-forward"></span></button>
       </div>
     </section>
   </div>
